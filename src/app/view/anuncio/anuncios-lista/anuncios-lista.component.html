@@ -1,0 +1,213 @@
+
+  <div [hidden]="formEdit" fxLayout="row wrap" fxLayoutAlign="start center" fxLayoutGap = "16px grid" class="content" >
+    <div *ngFor="let anuncio of anuncios" fxFlex = "25%" fxFlex.xs = "100%" fxFlex.sm = "33%">
+      <mat-card class="mat-elevation-z4">
+        <mat-card-header>
+          <div mat-card-avatar class="example-header-image"></div>
+          <mat-card-title>Nome do usuário</mat-card-title>
+          <mat-card-subtitle>{{ anuncio.tipoNegocio }}</mat-card-subtitle>
+        </mat-card-header>
+        
+        <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Foto do Residuo">
+        <mat-card-header id="info">
+          <mat-card-subtitle>{{ anuncio.residuo }}</mat-card-subtitle>
+          <mat-card-subtitle class="lateral" >{{ anuncio.tipoCategoria }}</mat-card-subtitle>
+          
+        </mat-card-header>
+        <mat-card-content>
+          
+          <p>
+            Aqui estará um resumo dos residuos
+          </p>
+
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-button id="delet" (click) = "deleteAnuncio(anuncio.id)"><mat-icon>delete</mat-icon></button>
+          <button mat-button id="edit"  (click) = "onEdit(anuncio)"><mat-icon>edit</mat-icon></button>
+        </mat-card-actions>
+    </mat-card>
+
+    </div>
+
+<!--     
+    <md-dialog role="dialog" tabindex="-1" id="dialogContent_4" aria-describedby="dialogContent_4" class="md-transition-in" aria-label="Faça seu ..." style=""><div layout="column" class="send-offer-popup layout-column">
+      <div class="f-s-16 m-b-20 bold ng-binding">
+          Faça seu lance
+      </div>-->
+  
+      <!-- ngIf: enableNegociationRadio -->
+      <!-- <fieldset layout="column" layout-align="center strecht" ng-if="enableNegociationRadio" class="ng-scope layout-align-center-stretch layout-column" style="">
+          <div layout="row" class="layout-row">
+              <span class="offer-fieldset ng-binding">Tipo de negociação*</span>
+          </div>
+          <div class="m-6">
+              <md-radio-group ng-change="changeRadioOption()" name="type" class="md-primary ng-pristine ng-untouched ng-valid ng-empty layout-row" layout="row" ng-model="offerModel.negotiationTypeId" role="radiogroup" tabindex="0" aria-invalid="false"> -->
+                  <!-- ngRepeat: type in negotiationType -->
+                  <!-- <div ng-repeat="type in negotiationType" class="ng-scope">
+                      <md-radio-button class="m-r-10" ng-value="type.Id" aria-label="Quero comprar" id="radio_5" role="radio" aria-checked="false" value="1"><div class="md-container" md-ink-ripple="" md-ink-ripple-checkbox=""><div class="md-off"></div><div class="md-on"></div></div><div ng-transclude="" class="md-label"><span class="ng-binding ng-scope">
+                          Quero comprar
+                      </span></div></md-radio-button>
+                  </div> -->
+                  <!-- end ngRepeat: type in negotiationType -->
+                  <!-- <div ng-repeat="type in negotiationType" class="ng-scope">
+                      <md-radio-button class="m-r-10" ng-value="type.Id" aria-label="Quero tratar" id="radio_6" role="radio" aria-checked="false" value="2"><div class="md-container" md-ink-ripple="" md-ink-ripple-checkbox=""><div class="md-off"></div><div class="md-on"></div></div><div ng-transclude="" class="md-label"><span class="ng-binding ng-scope">
+                          Quero tratar
+                      </span></div></md-radio-button>
+                  </div> -->
+                  <!-- end ngRepeat: type in negotiationType -->
+              <!-- </md-radio-group>
+          </div>
+      </fieldset> -->
+      <!-- end ngIf: enableNegociationRadio -->
+  
+      <!-- <fieldset layout="column" class="layout-column">
+          <div layout="row" flex="" class="m-6 layout-xs-column layout-row flex" layout-xs="column">
+              <md-input-container class="m-b-0-i md-input-invalid" ng-switch="ctrl.mask" custom-class="m-b-0-i" flex="40" flex-xs="100" is-required="true" field="offerModel.value" label="Valor  (Por ton)*" decimals="moneyDecimals" mask="number" is-disabled="false" name="priceName" changed="paymentTermsChanged" autofocus="autofocus">
+    <label class="ng-binding" for="input_7">Valor  (Por ton)*</label> -->
+    <!-- ngSwitchDefault: -->
+    <!-- ngSwitchWhen: month -->
+    <!-- ngSwitchWhen: email -->
+    <!-- ngSwitchWhen: money -->
+    <!-- ngSwitchWhen: percentage -->
+    <!-- ngSwitchWhen: cnpj -->
+    <!-- ngSwitchWhen: cpf -->
+    <!-- ngSwitchWhen: cnpjcpf -->
+    <!-- ngSwitchWhen: phone -->
+    <!-- ngSwitchWhen: cep -->
+    <!-- ngSwitchWhen: number -->
+    <!-- <input ng-required="ctrl.isRequired" ng-switch-when="number" ng-model="ctrl.field" name="priceName" type="" ng-disabled="ctrl.isDisabled" ui-number-mask="" auto-focus="ctrl.autofocus" error="ctrl.error" maxlength="" ng-blur="ctrl.onBlur()" class="ng-pristine ng-scope md-input ng-empty ng-invalid ng-invalid-required ng-valid-maxlength ng-touched" id="input_7" required="required" aria-invalid="true" style=""><div class="md-errors-spacer"></div>end ngSwitchWhen: -->
+    <!-- ngSwitchWhen: integer -->
+    <!-- ngSwitchWhen: vehiclePlate -->
+  
+    <!-- <div ng-messages="ctrl.error" multiple="" layout-margin="" class="layout-margin md-input-messages-animation md-auto-hide ng-inactive" aria-live="assertive"> -->
+      <!-- ngMessage: required -->
+      <!-- ngMessage: cpf -->
+      <!-- ngMessage: cnpj -->
+    <!-- </div> -->
+    <!-- ngIf: ctrl.helper -->
+    <!-- ngIf: ctrl.showEye -->
+  <!-- </md-input-container>
+              <md-input-container class="m-b-0-i" ng-switch="ctrl.mask" custom-class="m-b-0-i" flex="" flex-xs="100" is-required="false" field="offerModel.shipping" label="Frete" decimals="moneyDecimals" mask="number" is-disabled="offerModel.dontDoShipping" name="transportationPriceName" changed="paymentTermsChanged">
+    <label class="ng-binding" for="input_8">Frete</label> -->
+    <!-- ngSwitchDefault: -->
+    <!-- ngSwitchWhen: month -->
+    <!-- ngSwitchWhen: email -->
+    <!-- ngSwitchWhen: money -->
+    <!-- ngSwitchWhen: percentage -->
+    <!-- ngSwitchWhen: cnpj -->
+    <!-- ngSwitchWhen: cpf -->
+    <!-- ngSwitchWhen: cnpjcpf -->
+    <!-- ngSwitchWhen: phone -->
+    <!-- ngSwitchWhen: cep -->
+    <!-- ngSwitchWhen: number -->
+    <!-- <input ng-required="ctrl.isRequired" ng-switch-when="number" ng-model="ctrl.field" name="transportationPriceName" type="" ng-disabled="ctrl.isDisabled" ui-number-mask="" auto-focus="ctrl.autofocus" error="ctrl.error" maxlength="" ng-blur="ctrl.onBlur()" class="ng-pristine ng-untouched ng-valid ng-scope md-input ng-empty ng-valid-maxlength ng-valid-required" id="input_8" aria-invalid="false" style=""><div class="md-errors-spacer"></div>end ngSwitchWhen: -->
+    <!-- ngSwitchWhen: integer -->
+    <!-- ngSwitchWhen: vehiclePlate -->
+  
+    <!-- <div ng-messages="ctrl.error" multiple="" layout-margin="" class="layout-margin md-input-messages-animation md-auto-hide ng-inactive" aria-live="assertive"> -->
+      <!-- ngMessage: required -->
+      <!-- ngMessage: cpf -->
+      <!-- ngMessage: cnpj -->
+    <!-- </div> -->
+    <!-- ngIf: ctrl.helper -->
+    <!-- ngIf: ctrl.showEye -->
+  <!-- </md-input-container>
+              <div layout="row" flex-xs="100" layout-align-xs="start center" layout-align="center center" class="m-b-0-i layout-align-xs-start-center layout-align-center-center layout-row flex-xs-100">
+                  <md-checkbox flex="20" ng-change="doShippingChange()" ng-model="offerModel.dontDoShipping" class="thin-border md-primary m-b-0-i ng-pristine ng-untouched ng-valid flex-20 ng-empty" role="checkbox" tabindex="0" aria-checked="false" aria-invalid="false" style=""><div class="md-container md-ink-ripple" md-ink-ripple="" md-ink-ripple-checkbox=""><div class="md-icon"></div></div><div ng-transclude="" class="md-label"></div></md-checkbox>
+                  <span class="ng-binding">Não faço o frete</span>
+              </div>
+          </div>
+          <div layout-gt-xs="row" class="layout-gt-xs-row">
+              <md-input-container class="" ng-switch="ctrl.mask" layout-fill="" field="offerModel.Observations" label="Observações" maxlength="255">
+    <label class="ng-binding" for="input_9">Observações</label> -->
+    <!-- ngSwitchDefault: -->
+    <!-- <input ng-change="ctrl.changed(ctrl.field)" ng-required="ctrl.isRequired" ng-switch-default="" ng-model="ctrl.field" name="" ng-attr-type="{{ ctrl.type ? ctrl.type : 'text' }}" auto-focus="ctrl.autofocus" maxlength="255" ng-disabled="ctrl.isDisabled" min="1900-01-01" max="2078-12-31" error="ctrl.error" ng-focus="onFocus()" class="ng-pristine ng-untouched ng-valid ng-scope md-input ng-empty ng-valid-maxlength ng-valid-required" id="input_9" type="text" aria-invalid="false" style=""><div class="md-errors-spacer"></div>end ngSwitchWhen: -->
+    <!-- ngSwitchWhen: month -->
+    <!-- ngSwitchWhen: email -->
+    <!-- ngSwitchWhen: money -->
+    <!-- ngSwitchWhen: percentage -->
+    <!-- ngSwitchWhen: cnpj -->
+    <!-- ngSwitchWhen: cpf -->
+    <!-- ngSwitchWhen: cnpjcpf -->
+    <!-- ngSwitchWhen: phone -->
+    <!-- ngSwitchWhen: cep -->
+    <!-- ngSwitchWhen: number -->
+    <!-- ngSwitchWhen: integer -->
+    <!-- ngSwitchWhen: vehiclePlate -->
+  
+    <!-- <div ng-messages="ctrl.error" multiple="" layout-margin="" class="layout-margin md-input-messages-animation md-auto-hide ng-inactive" aria-live="assertive"> -->
+      <!-- ngMessage: required -->
+      <!-- ngMessage: cpf -->
+      <!-- ngMessage: cnpj -->
+    <!-- </div> -->
+    <!-- ngIf: ctrl.helper -->
+    <!-- ngIf: ctrl.showEye -->
+  <!-- </md-input-container>
+          </div>
+          <div layout="column" class="m-6 layout-column">
+              <div layout="row" layout-align="" class="p-t-5 layout-align-start-stretch layout-row">
+                  <span class="c-grey f-s-12 ng-binding">Valor do lance (Por
+                      ton):</span>
+                  <span flex="" class="flex"></span>
+                  <span class="f-s-12 c-grey ng-binding">R$ 0,00</span>
+              </div>
+              <div layout="row" layout-align="" class="p-t-5 layout-align-start-stretch layout-row">
+                  <span class="c-grey f-s-12 ng-binding">Quantidade Total:</span>
+                  <span flex="" class="flex"></span>
+                  <span class="f-s-12 c-grey ng-binding">x  Tonelada(s)</span>
+              </div>
+              <div layout="row" layout-align="" class="p-t-5 layout-align-start-stretch layout-row">
+                  <span class="offer-param-title ng-binding">Valor do lance:</span>
+                  <span flex="" class="flex"></span>
+                  <span class="f-s-12 ng-binding">R$ 0,00</span>
+              </div>
+              <div layout="row" layout-align="" class="p-t-5 p-b-3 layout-align-start-stretch layout-row">
+                  <span class="offer-param-title ng-binding">Frete:</span>
+                  <span flex="" class="flex"></span>
+                  <span class="offer-param-title ng-binding" ng-class="{'offer-popup-negative-color' : isBuyerOffer()}"></span>
+              </div>
+              <div layout="row" layout-align="" class="p-t-5 p-b-3 layout-align-start-stretch layout-row">
+                  <span flex-xs="50" class="offer-param-title ng-binding flex-xs-50">Taxa de introdução VG Resíduos</span>
+                  <div hide-xs="" class="hide-xs">
+                      <i class="material-icons f-s-14 offer-popup-info-icon">info</i>
+                      
+                  </div>
+                  <span flex="" flex-xs="10" class="flex-xs-10 flex"></span>
+                  <span flex-xs="40" class="offer-param-title ng-binding flex-xs-40 offer-popup-negative-color" ng-class="{'offer-popup-negative-color' : !isBuyerOffer()}" style=""></span>
+              </div>
+              <div layout="row" layout-align="" class="border-top-black p-t-5 b-t-1 layout-align-start-stretch layout-row">
+                  <span class="f-s-12 c-primary f-w-500 ng-binding">Total:</span>
+                  <span flex="" class="flex"></span>
+                  <span class="f-s-12 c-primary f-w-500 ng-binding">R$ 0,00</span>
+              </div>
+          </div>
+      </fieldset>
+  
+  
+      <div class="min-height-48 p-t-20 layout-xs-column layout-align-xs-center-center layout-align-space-between-center layout-row" layout="row" layout-xs="column" layout-align="space-between center" layout-align-xs="center center">
+          <div> -->
+              <!-- ngIf: showTosCheckbox -->
+              <!-- ngIf: !showTosCheckbox -->
+              <!-- <div class="f-s-12-i ng-scope" ng-if="!showTosCheckbox" style="">
+                  <span class="ng-binding">Veja nossos</span>
+                  <a ng-click="openTerms()" class="bold remove-default-color ng-binding"> termos e condições</a>
+                  <span class="ng-binding"> e</span>
+                  <a ng-click="openPrivacyPolicy()" class="bold remove-default-color ng-binding">política de privacidade.</a>
+              </div> -->
+              <!-- end ngIf: !showTosCheckbox -->
+          <!-- </div>
+          <div layout="row" layout-align="end center" layout-xs="column" layout-align-xs="center center" class="layout-xs-column layout-align-xs-center-center layout-align-end-center layout-row">
+              <button class="md-primary md-button md-ink-ripple" type="button" ng-transclude="" ng-click="cancel()" aria-label="Cancelar"><span class="ng-binding ng-scope">
+                  Cancelar
+              </span></button>
+              <button class="md-primary md-button md-raised md-button md-ink-ripple" type="button" ng-transclude="" ng-disabled="loading" ng-click="toSendOffer()" aria-label="Enviar"><span class="ng-binding ng-scope">
+                  Enviar
+              </span></button>
+          </div>
+  
+      </div>
+  </div></md-dialog> -->
+
+  </div>
+
+  <app-anuncio-form [hidden]="!formEdit" [formEdit]="formEdit" [anuncio]="anuncioEdit"></app-anuncio-form>

@@ -1,0 +1,41 @@
+
+    <mat-toolbar>
+        <a routerLink = "plataforma" >
+        <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon" (click)="home()">
+          <mat-icon>menu</mat-icon>
+        </button>
+        <span>Plataforma</span>
+        </a>
+        <span class="example-spacer"></span>
+        <button mat-icon-button [matMenuTriggerFor]="menu" class="example-icon">
+            <a ><mat-icon>bubble_char</mat-icon>
+            Meus Resíduos</a></button>
+        <mat-menu #menu="matMenu">
+        <button mat-menu-item (click)="listarResiduo()">
+            <a>
+                <mat-icon>add_box</mat-icon>Resíduos Cadastrados</a></button>
+        <button mat-menu-item>
+            <a href="/residuo/update/">
+                <mat-icon>update</mat-icon>Resíduos Atualizados</a></button>
+        
+        </mat-menu>
+        <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+            <a href="/anuncio/hearted"><mat-icon>assignment</mat-icon> Meus Favoritos</a> 
+        </button>
+        <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+            <a href="/anuncio/hearted"><mat-icon>favorite</mat-icon>Meus Favoritos</a>
+        </button>
+        
+        <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+            <a href="/conteudo/pagamento/"> <mat-icon>monetization_on</mat-icon>Meus Contatos</a>
+          </button>
+      </mat-toolbar>
+
+      <div [hidden]="index != 1">
+        <app-anuncios-lista [anuncios]="anuncios"></app-anuncios-lista>
+      </div>
+
+
+      <router-outlet></router-outlet>
+
+      

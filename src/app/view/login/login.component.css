@@ -1,0 +1,136 @@
+.ng-valid[required] {
+    border: 2px solid blue;
+}
+.ng-invalid:not(form) {
+    border: 2px solid red;
+}
+
+.divcenter {
+    position: relative!important;
+    float: none!important;
+    margin-left: auto!important;
+    margin-right: auto!important;
+}
+.form-control {
+    border-radius: 3px;
+}
+.form-control {
+    display: block;
+    width: 50%;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #FFFCFC;
+    background-image: none;
+    border: 1px solid #ccc;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    
+}
+input {
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    text-align: start;
+    appearance: textfield;
+    cursor: text;
+}
+input[type="password" i] {
+    -webkit-text-security: disc !important;
+}
+.postcontent, .sidebar, .col_full, .col_half, .col_one_third, .col_two_third, .col_three_fourth, .col_one_fourth, .col_one_fifth, .col_two_fifth, .col_three_fifth, .col_four_fifth, .col_one_sixth, .col_five_sixth {
+    display: block;
+    position: relative;
+}
+.col_full {
+    width: 100%;
+    margin-left: 25%;
+}
+form .col_full, form .col_half, form .col_one_third, form .col_two_third, form .col_three_fourth, form .col_one_fourth, form .col_one_fifth, form .col_two_fifth, form .col_three_fifth, form .col_four_fifth, form .col_one_sixth, form .col_five_sixth {
+    margin-bottom: 25px;
+}
+.col_full {
+    clear: both;
+    float: none;
+    margin-right: 0;
+}
+.accordion.accordion-lg .acctitle {
+    font-size: 23px;
+    line-height: 44px;
+    padding-left: 30px;
+    font-weight: 400;
+}
+.acctitle {
+    display: block;
+    position: relative;
+    margin: 0;
+    color: #444;
+    cursor: pointer;
+    border-top: 1px dotted #ddd;
+    padding-left: 25%;
+    padding-bottom: 10%;
+    font-family: Lato;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 30px;
+    line-height: 36px;
+    
+}
+.acc_content{
+    background-color: rgba(219, 179, 52, 0.31);
+    margin-left: 25%;
+    width: 50%;
+    height: auto;
+    padding-top: 5%;
+    margin-bottom: 11%;
+    margin-top: 11%;
+    padding-bottom: 5%;
+    
+
+}
+mat-label {
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 0.9rem;
+    line-height: 24px;
+    color: #000000;
+
+   
+}
+.btn{   
+    background: #DBB334;
+    border-radius: 25rem;
+    width: 6rem;
+    color: #fff;
+    float: left;
+  }
+
+#fright{
+margin-top: 0.5rem;
+margin-left: 10rem;
+  
+}
+
+
+a {
+    text-decoration: none!important;
+    color: #1e7ab9;
+    background-color: transparent;
+}
+@media (max-width: 767px){
+form .col_full, form .col_half, form .col_one_third, form .col_two_third, form .col_three_fourth, form .col_one_fourth, form .col_one_fifth, form .col_two_fifth, form .col_three_fifth, form .col_four_fifth, form .col_one_sixth, form .col_five_sixth {
+    margin-bottom: 25px!important;
+}
+}
+
+@media (max-width: 767px){
+.postcontent, .postcontent.bothsidebar, .sidebar, .col_full, .col_half, .col_one_third, .col_two_third, .col_three_fourth, .col_one_fourth, .col_one_fifth, .col_two_fifth, .col_three_fifth, .col_four_fifth, .col_one_sixth, .col_five_sixth {
+    width: 100%;
+    margin-right: 0;
+    float: none;
+}
+}

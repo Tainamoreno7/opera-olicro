@@ -1,0 +1,1 @@
+//reponsavel pela paginação dos anúncios

@@ -1,0 +1,75 @@
+<div class="acc_content clearfix noleftmargin noleftpadding">
+  <div class="acctitle acctitlec" id="acc_login">
+    <i class="acc-closed icon-lock3" style="color: #1b75ba"></i>
+    <i class="acc-open icon-unlock" style="color: #1b75ba"></i>Faça o login na
+    <strong>Licro.com</strong>
+  </div>
+
+  <form
+  [formGroup]="form" (ngSubmit)="onSubmit()"
+    role="form"
+    id="login_form"
+    name="login_form"
+    class="nobottommargin"
+    action="/login/"
+  >
+    <input
+      type="hidden"
+      name="csrfmiddlewaretoken"
+      value="JBPfNjemBMvVFkGUFR6ivxcPewPB9jl0dIFrkfrHPHFQ4BIX8pqxW6BHg1B5ngZ8"
+    />
+    <div class="col_full">
+      <mat-label>E-MAIL</mat-label>
+      <input
+        type="email"
+        name="email"
+        required=""
+        id="loginEmail"
+        autofocus="true"
+        maxlength="75"
+        class="form-control"
+        formControlName="email"
+        [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+        <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+            <div *ngIf="f.email.errors.required">Email é obrigatório</div>
+        </div>
+        
+    
+    </div>
+    <div class="col_full">
+      <mat-label>SENHA</mat-label>
+      <input
+    
+      
+      class="form-control"
+      
+      type="password"
+      formControlName="senha"
+      [ngClass]="{ 'is-invalid': submitted && f.senha.errors }" />
+      <div *ngIf="submitted && f.senha.errors" class="invalid-feedback">
+      <div *ngIf="f.senha.errors.required">Senha é Obrigatória</div>
+     </div>
+           
+      
+    </div>
+    
+    
+    <div class="col_full nobottommargin">
+      <button
+        class="btn btn-link btn-violet transitions animated fadeIn"
+        id="inputButtonLogin"
+        name="userButtonLogin"
+        value="login"
+        >
+        Entrar
+      </button>
+      <a
+        routerLink="/reset"
+        id="fright"
+        class="transitions animated fadeIn"
+        type="submit"
+        >Esqueceu a senha?</a
+      >
+    </div>
+  </form>
+</div>

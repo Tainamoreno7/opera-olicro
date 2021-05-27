@@ -1,0 +1,392 @@
+<header id="container" class="navbar navbar-expand-md navbar-light bg-light">
+  <!-- <div class= "navbar-header fixed-top">
+        <div class="bannerheader" role="banner" >
+       
+             <a class="navbar-brand" data-cy="navbarLogoLink" href="/" title="Inicio" >
+                <img src="assets/LOGOLICRO.png"
+                alt="Licro Logo"
+                class="visible-xs-inline visible-sm-inline visible-md-inl" width="100">
+                
+            </a>
+            <button class= "navbar-toggler btn-colapse"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarsExampleDefault"
+            aria-controls="navbarsExampleDefault"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+            >
+          <span class="my-1 mx-2 close">x</span>
+            <span class="navbar-toggler-icon"></span>
+          </button>
+            <div class="order-items">
+          
+              <nav class="collapse navbar-collapse" id="navbarsExampleDefault">
+              <ul class="navbar-nav mr-auto">
+                  <li class="nav-item active">
+                      
+                    <a class="nav-link" aria-label="Pagina do Gerador" target="_blank" rel="noopener" href="https://twitter.com/angular" title="Gerador">
+                    <span>Gerador</span>
+                    </a>
+                  </li>
+              
+  
+                  <li class="nav-item" >
+  
+                    <a class="nav-link" aria-label="Pagina do Gerador" target="_blank" rel="noopener" href="https://twitter.com/angular" title="Gerador">
+                      <span>Anúncio Comprador</span>
+                      </a>
+                  </li>
+  
+                  <li class="nav-item" >
+  
+                    <a class="nav-link" aria-label="Pagina do Gerador" target="_blank" rel="noopener" href="https://twitter.com/angular" title="Gerador">
+                      <span>Como Funciona</span>
+                      </a>
+                  </li>
+  
+                  <li class="nav-item" >
+                  <a class="nav-link" aria-label="Pagina do Gerador" target="_blank" rel="noopener" href="https://twitter.com/angular" title="Gerador">
+                    <span>Premium</span>
+                    </a>
+                  </li>
+                  
+              </ul>
+  
+              <a routerLink = "cadastro" id= "text" class="nav-link" aria-label="Pagina do Gerador" target="_blank" rel="noopener" title="Gerador" >
+                  <span>Cadastre-se</span>
+                  </a> 
+              <a id= "text" class = "nav-link" aria-label="Entrar" target="_blank" rel="noopener"  title="Anuncie Grátis"  href="https://twitter.com/angular" >
+              <span>Entrar</span>
+              </a>    
+              
+             <span class="nav-linkBtn"> <a href="/" class="btn transitions animated fadeIn" data-ga-category="Home" data-cy="postProjectCTA" title="Faça um lance">
+              
+              Anuncie Grátis
+              </a></span>
+              </nav>
+            </div> 
+           
+    </div>
+</div> -->
+  <div class="navbar-header fixed-top bannerheader">
+    <a
+      class="navbar-brand"
+      data-cy="navbarLogoLink"
+      title="Inicio"
+      routerLink="/"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
+      <img
+        src="assets/LOGOLICRO.png"
+        alt="Licro Logo"
+        width="100"
+        height="auto"
+      />
+    </a>
+    <button
+      class="navbar-toggler btn-colapse"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarsExampleDefault"
+      aria-controls="navbarsExampleDefault"
+      aria-expanded="false"
+      onclick="this.classList.toggle('active')"
+      aria-label="Toggle navigation"
+    >
+      <span class="my-1 mx-2 close">x</span>
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+      <ul class="navbar-nav w-100 align-items-center">
+        <li class="nav-item active">
+          <a
+            class="nav-link"
+            aria-label="Pagina do Gerador"
+            target="_blank"
+            rel="noopener"
+            href="https://twitter.com/angular"
+            title="Gerador"
+          >
+            <span>Gerador</span>
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            aria-label="Pagina do Gerador"
+            target="_blank"
+            rel="noopener"
+            href="https://twitter.com/angular"
+            title="Gerador"
+          >
+            <span>Anúncio Comprador</span>
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            aria-label="Pagina do Gerador"
+            target="_blank"
+            rel="noopener"
+            href="https://twitter.com/angular"
+            title="Gerador"
+          >
+            <span>Como Funciona</span>
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            aria-label="Pagina do Gerador"
+            target="_blank"
+            rel="noopener"
+            href="https://twitter.com/angular"
+            title="Gerador"
+          >
+            <span>Premium</span>
+          </a>
+        </li>
+      </ul>
+      <ul class="navbar-nav">
+        <a
+          routerLink="cadastro"
+          id="text"
+          class="nav-link"
+          aria-label="Cadastre-se"
+          target="_blank"
+          rel="noopener"
+          title="Cadastro"
+        >
+          <span>Cadastre-se</span>
+        </a>
+        <a
+          [routerLink]="['/login']"
+          id="text"
+          class="nav-link"
+          aria-label="Entrar"
+          target="_blank"
+          rel="noopener"
+          title="Entrar"
+        >
+          <span *ngIf="!isLogging">Entrar</span>
+          <span *ngIf="isLogging">Bem vindo</span>
+          <span *ngIf="isLogging" (click)="logout()">Sair</span>
+        </a>
+
+        <span class="nav-link">
+          <a
+            routerLink="anuncio"
+            class="btn transitions animated fadeIn"
+            data-ga-category="Home"
+            data-cy="postProjectCTA"
+            title="Faça um lance"
+          >
+            Anuncie Grátis
+          </a></span
+        >
+      </ul>
+    </div>
+  </div>
+  <div class="container-carrosel">
+    <div class="carrosel">
+      <owl-carousel-o [options]="customOptions">
+        <ng-template carouselSlide>
+          <div class="icones">
+            <a href="/">
+              <img
+                src="assets/Icones/borracha.svg"
+                alt="borracha"
+                style="opacity: 1"
+              />
+              <span>Borracha</span>
+            </a>
+          </div>
+        </ng-template>
+        <ng-template carouselSlide>
+          <div class="icones">
+            <a href="/">
+              <img
+                src="assets/Icones/madeira.svg"
+                alt="madeira"
+                style="opacity: 1"
+              />
+              <span>Madeira</span>
+            </a>
+          </div>
+        </ng-template>
+        <ng-template carouselSlide>
+          <div class="icones">
+            <a href="/">
+              <img
+                src="assets/Icones/metais.svg"
+                alt="metais"
+                style="opacity: 1"
+              />
+              <span>Metais</span>
+            </a>
+          </div>
+        </ng-template>
+        <ng-template carouselSlide>
+          <div class="icones">
+            <a href="/">
+              <img
+                src="assets/Icones/organico.svg"
+                alt="organico"
+                style="opacity: 1"
+              />
+              <span>Orgânico</span>
+            </a>
+          </div>
+        </ng-template>
+        <ng-template carouselSlide>
+          <div class="icones">
+            <a href="/">
+              <img
+                src="assets/Icones/papel.svg"
+                alt="papel"
+                style="opacity: 1"
+              />
+              <span>Papel</span>
+            </a>
+          </div>
+        </ng-template>
+        <ng-template carouselSlide>
+          <div class="icones">
+            <a href="/">
+              <img
+                src="assets/Icones/plastico.svg"
+                alt="plastico"
+                style="opacity: 1"
+              />
+              <span>Plástico</span>
+            </a>
+          </div>
+        </ng-template>
+        <ng-template carouselSlide>
+          <div class="icones">
+            <a href="/">
+              <img
+                src="assets/Icones/quimicos.svg"
+                alt="quimico"
+                style="opacity: 1"
+              />
+              <span>Químicos</span>
+            </a>
+          </div>
+        </ng-template>
+        <ng-template carouselSlide>
+          <div class="icones">
+            <a href="/">
+              <img
+                src="assets/Icones/rcc.svg"
+                alt="quimico"
+                style="opacity: 1"
+              />
+              <span>RCC</span>
+            </a>
+          </div>
+        </ng-template>
+        <ng-template carouselSlide>
+          <div class="icones">
+            <a href="/">
+              <img src="assets/Icones/reee.svg" alt="reee" style="opacity: 1" />
+              <span>REEE</span>
+            </a>
+          </div>
+        </ng-template>
+        <ng-template carouselSlide>
+          <div class="icones">
+            <a href="/">
+              <img
+                src="assets/Icones/sucata.svg"
+                alt="sucata"
+                style="opacity: 1"
+              />
+              <span>Sucata</span>
+            </a>
+          </div>
+        </ng-template>
+        <ng-template carouselSlide>
+          <div class="icones">
+            <a href="/">
+              <img
+                src="assets/Icones/tecido.svg"
+                alt="Tecido"
+                style="opacity: 1"
+              />
+              <span>Tecido</span>
+            </a>
+          </div>
+        </ng-template>
+        <ng-template carouselSlide>
+          <div class="icones">
+            <a href="/">
+              <img
+                src="assets/Icones/vidro.svg"
+                alt="Vidro"
+                style="opacity: 1"
+              />
+              <span>vidro</span>
+            </a>
+          </div>
+        </ng-template>
+      </owl-carousel-o>
+    </div>
+    <div class="example-container">
+      <form>
+        <mat-icon class="icon">loyalty</mat-icon>
+        <mat-form-field class="procura">
+          <input matInput type="text" (ngModel)="(value)" />
+          <mat-label id="textseach"> Qual resíduo você procura? </mat-label>
+        </mat-form-field>
+
+        <mat-form-field class="categoria">
+          <mat-label>Categoria</mat-label>
+          <mat-select>
+            <mat-option value="Borracha">Borracha</mat-option>
+            <mat-option value="Madeira">Madeira</mat-option>
+            <mat-option value="Metais">Metais</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field class="Cidade">
+          <input matInput type="text" (ngModel)="(value)" />
+          <mat-label> Insira a Cidade </mat-label>
+        </mat-form-field>
+        <mat-form-field class="estado">
+          <mat-label>Estado</mat-label>
+          <mat-select>
+            <mat-option value="Borracha">Borracha</mat-option>
+            <mat-option value="Madeira">Madeira</mat-option>
+            <mat-option value="Metais">Metais</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field class="oferta">
+          <mat-label>Tipo de Oferta</mat-label>
+          <mat-select>
+            <mat-option value="Borracha">Borracha</mat-option>
+            <mat-option value="Madeira">Madeira</mat-option>
+            <mat-option value="Metais">Metais</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field class="ordenar">
+          <mat-label>Ordenar por</mat-label>
+          <mat-select>
+            <mat-option value="+">Mais recente</mat-option>
+            <mat-option value="Madeira">Menos recente</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <button id="search" aria-label="Example icon button with a heart icon">
+          <mat-icon>search</mat-icon>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <router-outlet></router-outlet>
+</header>

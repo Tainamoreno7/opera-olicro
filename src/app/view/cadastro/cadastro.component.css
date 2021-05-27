@@ -1,0 +1,211 @@
+.divcenter {
+    position: relative!important;
+    float: none!important;
+    margin-left: auto!important;
+    margin-right: auto!important;
+    line-height: 1.5;
+    background-color: rgba(219, 179, 52, 0.31);
+    padding: 30px;
+}
+
+
+
+.ng-valid[required] {
+    border: 2px solid blue;
+}
+.ng-invalid:not(form) {
+    border: 2px solid red;
+}
+
+.accordion.accordion-lg .acctitle {
+    font-family: Lato;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 30px;
+    line-height: 36px;
+}
+.acctitle:first-child {
+    border-top: none;
+}
+.acctitlec {
+    cursor: auto;
+}
+.acctitle {
+    display: block;
+    position: relative;
+   
+    color: #444;
+    padding: 10px 0 10px 20px;
+  
+    }
+.accordion.accordion-lg .acc_content {
+    padding: 10px 0 30px 30px;
+    
+}
+a{
+    color: black;
+}
+.checkbox-style-1-label{
+    display: inline-block;
+    vertical-align: middle;
+    margin: 5px;
+    cursor: pointer;
+}
+::selection {
+    background: #49708C;
+    color: #fff;
+    text-shadow: none;
+}
+*:before, *:after {
+    box-sizing: border-box;
+}
+* {
+    box-sizing: border-box;
+}
+.noleftmargin {
+    margin-left: 0!important;
+    
+}
+.noleftpadding {
+    padding: 0% !important;
+    
+}
+.btn{   
+    background: #DBB334;
+    border-radius: 25rem;
+    width: 9rem;
+    color: #fff;
+    float: left;
+  }
+
+
+.acc_content {
+    position: relative;
+    
+    margin-left: 25%;
+    
+    height: auto;
+    padding-top: 5%;
+ 
+   
+  
+}
+.accordion.accordion-lg .acc_content {
+    padding: 10px 0 30px 30px;
+}
+.form-control {
+    border-radius: 3px;
+}
+.form-control {
+    display: block;
+    width: 100%;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: black;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid white;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+input, button, select, textarea {
+    font-family: inherit;
+    margin: 0;
+    font: inherit;
+
+}
+input {
+   
+    text-rendering: auto;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    text-align: start;
+    appearance: auto;
+    background-color: -internal-light-dark(rgb(255, 255, 255), rgb(59, 59, 59));
+    -webkit-rtl-ordering: logical;
+    cursor: text;
+
+}
+form .col_full, form .col_half, form .col_one_third, form .col_two_third, form .col_three_fourth, form .col_one_fourth, form .col_one_fifth, form .col_two_fifth, form .col_three_fifth, form .col_four_fifth, form .col_one_sixth, form .col_five_sixth {
+    margin-bottom: 25px;
+}
+.col_full {
+    clear: both;
+    float: none;
+    margin-right: 0;
+} 
+.postcontent, .sidebar, .col_full, .col_half, .col_one_third, .col_two_third, .col_three_fourth, .col_one_fourth, .col_one_fifth, .col_two_fifth, .col_three_fifth, .col_four_fifth, .col_one_sixth, .col_five_sixth {
+    display: block;
+    position: relative;
+    margin-right: 4%;    
+    float: left;
+}
+.col_half {
+    width: 48%;
+}
+.col_full {
+    width: 100%;
+}
+* {
+    box-sizing: border-box;
+}
+
+mat-label{
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.col_last {
+    margin-right: 0!important;
+    clear: right;
+    margin-bottom: 25px;
+}
+
+/* 
+.example-headers-align .mat-expansion-panel-header-title,
+.example-headers-align .mat-expansion-panel-header-description {
+  flex-basis: 0;
+  
+  
+}
+
+.example-headers-align .mat-expansion-panel-header-description {
+  justify-content: space-between;
+  align-items: center;
+}
+
+.example-headers-align .mat-form-field + .mat-form-field {
+  margin-left: 8px;
+}
+
+.mat-expansion-panel-header-title, .mat-expansion-panel-header-description {
+    display: flex;
+    flex-grow: 1;
+    margin-right: 50%;
+}
+.mat-expansion-panel-header {
+    height: 48px;
+    
+}
+.mat-expansion-panel-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0 24px;
+    border-radius: inherit;
+    transition: height 225ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+mat-expansion-panel {
+    margin-left: 20%;
+    background: #DBB334;
+    color: rgba(0,0,0,.87);
+    width: 62%;
+}
+
+    */

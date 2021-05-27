@@ -1,0 +1,434 @@
+
+.box-container {
+    width:auto;
+    position: relative;
+    overflow-x: hidden;
+    font-family: Inter,sans-serif;
+    font-size: 14px;
+    line-height: 1.4;
+    
+    
+}
+.box-container::before {
+    content:"";
+    height: 0;
+    float: left;
+    padding-bottom:  50%;
+    
+}
+.box-container::after {
+    content:"";
+    display:block;
+    clear:both;
+}
+
+.main-image {
+    color:#D8C031;
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+}
+.main-image img{
+    width: auto;
+}
+
+@media (max-width: 1060px){
+    .main-image {
+        flex-direction: column;
+    }
+    .main-image img{
+        max-width: auto !important;
+    }
+  
+}
+
+
+
+
+.btn-link {
+  background: #DBB334;
+  border-radius: 20px;
+  color: black;
+  font-weight: bold;
+  
+
+  }
+
+
+
+
+
+img{
+    width: 626px;
+    height: 453px;
+    
+}
+.img{
+ 
+    justify-items:flex-end;
+    width: 800px;
+    height: 453px;
+    
+}
+
+.container {
+    align-items: end;
+    margin-left: 8%;
+    margin-right: 3.5rem;
+
+    margin-top: 4rem;
+    position: relative;
+    width: 600px;
+    height: 30rem;
+    text-align: justify;
+}
+
+
+
+ h1 {
+
+    font-size: 48rem;
+    font-family: Inter,sans-serif;
+    line-height: 1.3;
+    font-weight: 600;
+    margin-block-start: 1rem;
+    margin-block-end: 1rem;
+    
+}
+.main-image .highlighted {
+    margin-top: 4.5rem;
+    white-space: pre-wrap;
+    color: #B93727;
+    
+}
+
+/*campo como funciona */
+
+.how-it-works {
+    padding-bottom: 60px;
+    background-color: #B93727;
+
+    
+}
+
+.how-it-works .container {
+    position: relative;
+}
+
+.fadeIn {
+   animation-name: fadeIn;
+}
+.animated {
+    animation-fill-mode:both;
+
+}
+
+.container-comofunciona {
+    margin-right: 3.5rem;
+    margin-left: 8%;
+    padding-left: 15px;
+    padding-right: 15px;
+
+}
+.container-comofunciona::before {
+    content: " ";
+    display: table;
+    box-sizing: border-box;
+}
+
+.h2 {
+    margin: 40px 0;
+    font-weight: 600;
+    font-family: Inter, sans-serif;
+    line-height: 1.3;
+    font-size: 30px;
+}
+
+.how-it-works a.more {
+    position: absolute;
+    top:37rem;
+    right: 20px;
+}
+a.more{
+    margin-right: 3.5rem;
+
+    color: white;
+}
+div {
+    display: block;
+}
+a:-webkit-any-link {
+    cursor: pointer;
+}
+
+
+
+how-it-works h4 {
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+h4 {
+    display:block;
+    margin-block-start: 1.4em;
+    margin-block-end: 1.4em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+   
+    
+    
+}
+
+#teste{
+    padding-bottom: 3rem;
+    
+}
+
+.h3, h3 {
+    font-weight: 500;
+    font-size: 22px;
+   
+}
+
+.col-sm-3, .col-sm-6, .col-md-4{
+    position: relative;
+    min-height: 1px;
+    padding-left: 0.1%;
+    
+       
+}
+@media (min-width: 768px){
+.col-sm-3 {
+    width: 25%;
+}
+}
+
+@media (min-width: 768px){
+ .col-sm-3{
+    float: left;
+}}
+p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    margin: 0 0 9.5px;
+    line-height: 26px;
+    
+    font-weight: 400  !important;
+    
+    
+
+}
+
+how-it-works p {
+    padding: 0;
+    margin-bottom: 50px;
+   
+}
+p.h4{
+ font-size: 16px;
+
+}
+.h4, .h5, .h6 {
+    margin-top: 9.5px;
+    margin-bottom: 9.5px;
+    font-weight: 400;
+}
+#comofuncionaanuncio{
+    color: white;
+}
+
+
+* {
+    word-wrap: break-word;
+}
+*, :after, :before {
+        box-sizing: border-box;
+}
+/* é muito fácil colocar em prática*/
+.goals {
+    padding-bottom: 50px;
+    margin-bottom: 40px;
+    background-color: #D8C031;
+}
+
+.iconify {
+    max-height: 100px;
+    color: #49708C;
+    width: 30rem;
+}
+
+.h1, .h2 {
+    font-weight: 600;
+}
+@media (max-width: 992px){
+    .h2, h2 {
+    font-size: 26px;
+}}
+
+.descrição{
+    display: flex;
+    float: left;
+    background-color: hotpink;
+   
+}
+.goals article {
+    margin-bottom: 20px;
+  
+}
+article {
+    display:flex;
+    float: left;
+    width: 40rem;
+    padding: 0;
+    
+}
+#segundacoluna{
+   background-color: greenyellow;
+   display: flex;
+    float: left;
+
+}
+
+@media (max-width: 991px){
+.enterprise .containerend{
+    padding: 20px;
+}}
+@media (max-width: 991px){
+.enterprise {
+    margin-top: 0;
+    padding: 0 15px;
+      
+}}
+.enterprise .containerend {
+  
+    margin-left: 8%;
+    width: 85%;
+    
+  
+  
+    background-color: #34814D;
+  
+    position: relative;
+    
+    
+}
+@media (min-width: 768px){
+.containerend {
+    height: 16rem;
+    width: 83rem;
+    margin-bottom: 10rem;
+}}
+.enterprise {
+    color: #fff;
+    margin-top: 50px;
+   
+  
+}
+@media (max-width: 991px){
+.enterprise .h2 {
+    margin-bottom: 15px;
+}}
+.enterprise .h2 {
+    margin: 0;
+}
+@media (max-width: 991px){
+.enterprise .container:after {
+    background-size: auto 200px;
+    right: 0;
+}}
+@media (max-width: 991px){
+.enterprise .h3 {
+    padding-right: 75px;
+}}
+@media (max-width: 992px){
+.h3, h3 {
+    font-size: 20px;
+  
+}}
+.h3, h3 {
+    font-weight: 500;
+    
+}
+#subbarraverde {    
+    font-family:cursive;
+font-size: 20px;
+line-height: 30px;
+max-width: 50%;
+
+margin-right: auto;
+    margin-left: auto;
+text-align: center;
+
+}
+.h1, .h2, .h3, h1, h2, h3 {
+    margin-top: 19px;
+    margin-bottom: 9.5px;
+}
+
+@media (max-width: 992px){
+.h2, h2 {
+    font-size: 26px;
+}}
+
+
+ #barraverde{
+    padding-top: 2rem;
+    font-family: Inter;
+    line-height: 1.3;
+font-size: 1.75rem;
+
+text-align: center;
+
+}
+@media (max-width: 991px){
+.enterprise .container:after {
+    background-size: auto 200px;
+    right: 0;
+}}
+.enterprise .containerend:after {
+    content: '';
+    display: block;
+    width: 450px;
+    position: absolute;
+    top: -35px;
+    right: 4px;
+    bottom: 0;
+    background-image: url(/assets/homem-sentado-apontando-personagem-by-vexels.png);
+    background-position: bottom right;
+    background-size: auto 280px;
+    background-repeat: no-repeat;
+    pointer-events: none;
+}
+
+.btn-violet {
+    color: #fff;
+    background-color: #215F35;
+    border-color: #215F35;
+    display:inline;
+    position: relative;
+    justify-items: center;
+    margin-left: 50%;
+    
+    
+    
+
+}
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
