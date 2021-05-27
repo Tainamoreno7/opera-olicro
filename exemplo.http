@@ -1,0 +1,33 @@
+http://localhost:3000/anuncio/
+
+###
+
+POST  http://localhost:3000/anuncio HTTP/1.1
+content-type: application/json
+
+{
+    "type_deal": 2,
+    "tipo_residuo": 1,
+    "nome_residuo": "pneu 00"
+}
+
+###
+DELETE  http://localhost:3000/anuncio/2
+
+###
+http://localhost:3000/account
+
+###
+
+POST  http://localhost:3000/account HTTP/1.1
+content-type: application/json
+
+{
+    "nome": "Taina",
+    "sobrenome": "Lima",
+    "pais": "BR",
+    "whatsapp": "75123456779",
+    "email": "tainamoreno7@gmail.com",
+    "senha": "1234567",
+    "termos": true
+  }

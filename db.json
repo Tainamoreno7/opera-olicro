@@ -1,0 +1,60 @@
+{
+  "anuncio": [
+    {
+      "id": 1,
+      "tipoNegocio": 1,
+      "tipoCategoria": 2,
+      "residuo": "lamina de barbeador"
+    },
+    {
+      "residuo": "virus",
+      "tipoCategoria": 4,
+      "tipoNegocio": 1,
+      "id": 2
+    }
+  ],
+  "account": [
+    {
+      "id": 1,
+      "nome": "Thayana",
+      "sobrenome": "Lima",
+      "pais": "BR",
+      "whatsapp": "75123456789",
+      "email": "tainamoreno@gmail.com",
+      "senha": "123456",
+      "termos": true
+    },
+    {
+      "nome": "Taina",
+      "sobrenome": "Lima",
+      "pais": "BR",
+      "whatsapp": "75123456779",
+      "email": "tainamoreno7@gmail.com",
+      "senha": "1234567",
+      "termos": true,
+      "id": 2
+    },
+    {
+      "nome": "Taina",
+      "sobrenome": "Moreno",
+      "pais": "AF",
+      "whatsapp": "7592713464",
+      "email": "tainamoreno@gmail.com",
+      "senha": "123456",
+      "confirmeSenha": "123456",
+      "termos": true,
+      "id": 3
+    },
+    {
+      "nome": "Taina",
+      "sobrenome": "Moreno",
+      "pais": "ZA",
+      "whatsapp": "(75) 9271-3464",
+      "email": "tainamoreno7@gmail.com",
+      "senha": "123456",
+      "confirmeSenha": "123456",
+      "termos": true,
+      "id": 4
+    }
+  ]
+}
