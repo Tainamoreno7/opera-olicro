@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { Anuncio } from '../anuncio/anuncio';
 import { AnunciosService } from '../anuncio/anuncios.service';
@@ -12,7 +12,7 @@ import { AnunciosService } from '../anuncio/anuncios.service';
 })
 export class PerfilComponent implements OnInit {
   
-  anuncios: Anuncio[] = [];
+  @Input() anuncios: Anuncio[] = [];
   index: number = 0;
 
   
@@ -27,17 +27,32 @@ export class PerfilComponent implements OnInit {
   }
 
  listarResiduo(){
+   debugger
   this.serviceAnuncio.list().subscribe(dados => {
-   // {{debugger}}
+  {{debugger}}
     this.anuncios = dados;
   });
   this.router.navigate(['residuo']);
   this.index = 1;
   }
-  home(){
-    
+  
+  
+  getAll(){
+    debugger
+  this.serviceAnuncio.getAll().subscribe(dados => {
+  {{debugger}}
+  this.anuncios = dados;
+  });
+  this.router.navigate(['plataforma']);
+  this.index = 2;
   }
+
+
 
   
 
 }
+function input() {
+  throw new Error('Function not implemented.');
+}
+

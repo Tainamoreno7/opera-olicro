@@ -9,10 +9,12 @@
  .navbar-header{
    display: flex;
   
-    
-  
+   
  }
  
+ a{
+   cursor: pointer;
+ }
  .bannerheader {
    position: fixed;
    height: auto;   
@@ -53,7 +55,7 @@ p {
   .navbar-nav{
     display: flex;
     float: left;
-    margin-right: 3.5rem;
+    margin-right: 3.0rem;
   }
 
   .nav-link{

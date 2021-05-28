@@ -1,0 +1,28 @@
+.btn-link {
+    background: #DBB334;
+    border-radius: 20px;
+    color: black;
+    font-weight: bold;
+    
+  
+}
+.content{
+    padding: 16px;
+}
+
+.content> mat-card{
+    width: 200px;
+    
+}
+button{
+    color: #B93727 ;
+    
+}
+
+
+mat-card-actions{
+    
+    margin-left: -8px;
+    margin-right: 0;
+    padding: 8px 0;
+}

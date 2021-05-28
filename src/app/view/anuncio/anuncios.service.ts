@@ -24,6 +24,11 @@ export class AnunciosService {
         return this.http.get<Anuncio>(`${baseUrl}/getByUserId/${id}`);
     }
 
+    getByTipo(tipo: number) {
+        
+      return this.http.get<Anuncio[]>(`${baseUrl}/GetByTipo/${tipo}`);
+  }
+
     create(params: any) {
         return this.http.post(baseUrl, params);
     }
@@ -41,6 +46,9 @@ export class AnunciosService {
     return this.http.get<Anuncio[]>(`${baseUrl}/getAll`).pipe(
       tap(console.log)
     );
+
+
+  
   }
 
   

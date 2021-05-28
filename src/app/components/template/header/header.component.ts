@@ -1,8 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import { FormBuilder } from '@angular/forms';
 import {AccountService} from 'src/app/account/shared/account.service'
 import { Router } from '@angular/router';
+import { AnunciosService } from '@app/view/anuncio/anuncios.service';
+import { Anuncio } from '@app/view/anuncio/anuncio';
 
 
 
@@ -15,17 +17,19 @@ export class HeaderComponent {
    
   value = 'Clear me';
   isLogging: boolean = false;
-
+  @Input() anuncios: Anuncio[] = [];
 
 
   isExpanded:boolean = false;
   isMobile: boolean = false;
   user: String = 'Tainá Moreno';
+   
 
   
   constructor(
     private accountService: AccountService,
-    private router: Router
+    private router: Router,
+    private serviceAnuncio: AnunciosService
    ) { 
     
   }
@@ -39,12 +43,24 @@ export class HeaderComponent {
 
     this.setMobile();
    }
+
+
   logout(){
     this.accountService.logout();
     this.router.navigate(['/']);
 
    }
-  
+   
+   filter(number:any){
+     {{debugger}}
+    console.log(number);
+    this.serviceAnuncio.getByTipo(number).subscribe(dados => {
+      this.anuncios = dados;
+    });
+    this.router.navigate(['plataforma']);
+  }
+
+
   collapse() {
     this.isExpanded = false;
   }
