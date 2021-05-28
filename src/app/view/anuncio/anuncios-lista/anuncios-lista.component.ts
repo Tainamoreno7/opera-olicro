@@ -21,9 +21,9 @@ export class AnunciosListaComponent implements OnInit {
     constructor(private anunciosService: AnunciosService) {}
 
     ngOnInit() {
-        this.anunciosService.getAll()
-            .pipe(first())
-            .subscribe(anuncios => this.anuncios = this.anuncios);
+        // this.anunciosService.getAll()
+        //     .pipe(first())
+        //     .subscribe(anuncios => this.anuncios = this.anuncios);
     }
 
     deleteAnuncio(id: any) {
