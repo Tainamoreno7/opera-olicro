@@ -11,19 +11,19 @@ import { AnunciosService } from '../anuncio/anuncios.service';
   styleUrls: ['./perfil.component.css']
 })
 export class PerfilComponent implements OnInit {
-  
+
   @Input() anuncios: Anuncio[] = [];
   index: number = 0;
 
-  
+
   constructor(
     private router: Router,
     private serviceAnuncio: AnunciosService
-    
+
     ) { }
 
   ngOnInit(): void {
-  
+
   }
 
  listarResiduo(){
@@ -35,8 +35,8 @@ export class PerfilComponent implements OnInit {
   this.router.navigate(['residuo']);
   this.index = 1;
   }
-  
-  
+
+
   getAll(){
     debugger
   this.serviceAnuncio.getAll().subscribe(dados => {
@@ -49,7 +49,7 @@ export class PerfilComponent implements OnInit {
 
 
 
-  
+
 
 }
 function input() {

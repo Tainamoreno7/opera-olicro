@@ -9,13 +9,18 @@ import { AnunciosService } from '../anuncio/anuncios.service';
   styleUrls: ['./plataforma.component.css']
 })
 export class PlataformaComponent implements OnInit {
- 
+
   @Input() anuncios: Anuncio[] = [];
+  formType: boolean = false;
 
     constructor(private anunciosService: AnunciosService) {}
 
   ngOnInit(): void {
-    this.anunciosService.getAll().subscribe(dados => this.anuncios = dados);  }
-  
+
+
+     }
+
+
+
 
 }
