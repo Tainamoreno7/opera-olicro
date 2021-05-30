@@ -18,6 +18,9 @@ import { Input } from '@angular/core';
 export class AnuncioformComponent implements OnInit {
   @Input() anuncio: Anuncio = new Anuncio();
   @Input() formEdit: boolean = false;
+  index:number = 0;
+
+
 
   constructor(
     private service: AnunciosService,
@@ -30,7 +33,7 @@ export class AnuncioformComponent implements OnInit {
 
 
 
-  residuo = 
+  residuo =
   {
     tipoNegocio:'',
      tipoCategoria:'',
@@ -38,7 +41,7 @@ export class AnuncioformComponent implements OnInit {
   };
 
   ngOnInit(): void {
-
+    console.log(this.index);
 
     this.route.params.subscribe(
       (params: any) => {
@@ -48,7 +51,24 @@ export class AnuncioformComponent implements OnInit {
     )
 
   }
-  
+
+
+  next1(){
+    this.index = 1;
+  }
+  next2(){
+    this.index = 2
+  }
+  next3(){
+    this.index = 3
+
+  }
+  next4(){
+    this.index = 4
+
+  }
+
+
   onSubmit(value:any){
     {{debugger}}
 
@@ -58,22 +78,22 @@ export class AnuncioformComponent implements OnInit {
 
     this.service.create(this.anuncio).pipe(first())
     .subscribe({
-      
+
         next: () => {
             this.alertService.success('Registration successful', { keepAfterRouteChange: true });
-            alert('Anuncio cadastrado com Sucesso!! :-)\n\n') 
+            // alert('Anuncio cadastrado com Sucesso!! :-)\n\n')
             this.router.navigate(['plataforma'], { relativeTo: this.route });
             {{debugger}}
         },
         error: error => {
             this.alertService.error(error);
             {{debugger}}
-        
+
         }
       });
-     
+
     }
-   
+
     updateAnuncio(value:any) {
       debugger
     this.anuncio.residuo = value.Residuo;
@@ -84,9 +104,9 @@ export class AnuncioformComponent implements OnInit {
             .pipe(first())
             .subscribe(() => {
                 this.alertService.success('Anuncio updated', { keepAfterRouteChange: true });
-                alert('Anuncio Atualizado com Sucesso!! :-)\n\n') 
+                alert('Anuncio Atualizado com Sucesso!! :-)\n\n')
                 this.router.navigate(['plataforma'], { relativeTo: this.route });
-         
+
             });
 
   }
@@ -94,7 +114,7 @@ export class AnuncioformComponent implements OnInit {
   resetForm(Form: NgForm){
     Form.reset();
   }
- 
+
 }
 
 
