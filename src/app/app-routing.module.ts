@@ -20,43 +20,44 @@ const routes: Routes = [
   { path: '', component:HomeComponent },
   { path: 'plataforma', component:PlataformaComponent },
   { path: 'login', component:LoginComponent },
-  
- 
-  
+  { path: 'anuncio', component:AnuncioformComponent },
+
+
+
   {
     path:'',
     component: PerfilComponent,
-    children:[ 
-     { path: '', redirectTo: 'anuncio', pathMatch: 'full'  },  
-      { path: 'anuncio', component:AnuncioformComponent },
+    children:[
+     { path: '', redirectTo: 'anuncio', pathMatch: 'full'  },
+      //{ path: 'anuncio', component:AnuncioformComponent },
       { path: 'perfil', component:PerfilComponent },
       {path: 'residuo', component:AnunciosListaComponent},
       {path: 'editar/:id', component: AnuncioformComponent}
-      
-     
-      
-   
-      
+
+
+
+
+
     ],
     canActivate:[AuthGuard]
-    
+
   },
   {path: '', component:AuthenticationComponent,
-  
+
   children: [
     { path: '', redirectTo: 'login', pathMatch: 'full'  },
         { path: 'login', component:LoginComponent  },
     { path:'cadastro', component:CadastroComponent },
     { path: '', component:HomeComponent }
 
-  
+
   ]
 },
 
 { path: 'reset', component:ResetComponent }
 
-  
- 
+
+
 ];
 
 @NgModule({

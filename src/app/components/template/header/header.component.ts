@@ -14,27 +14,28 @@ import { Anuncio } from '@app/view/anuncio/anuncio';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
-   
+
   value = 'Clear me';
   isLogging: boolean = false;
   @Input() anuncios: Anuncio[] = [];
+  index: number = 0;
 
 
   isExpanded:boolean = false;
   isMobile: boolean = false;
   user: String = 'Tainá Moreno';
-   
 
-  
+
+
   constructor(
     private accountService: AccountService,
     private router: Router,
     private serviceAnuncio: AnunciosService
-   ) { 
-    
+   ) {
+
   }
-  
-  
+
+
   ngOnInit(): void {
 
     this.accountService.isLogging$.subscribe(
@@ -50,14 +51,17 @@ export class HeaderComponent {
     this.router.navigate(['/']);
 
    }
-   
+
    filter(number:any){
-     {{debugger}}
-    console.log(number);
+debugger
+    console.log(number)
     this.serviceAnuncio.getByTipo(number).subscribe(dados => {
       this.anuncios = dados;
+      console.log(dados);
     });
+    debugger
     this.router.navigate(['plataforma']);
+    this.index = 1;
   }
 
 
@@ -77,24 +81,24 @@ export class HeaderComponent {
     }
     return false;
   }
-  
+
   customOptions: OwlOptions = {
     loop: true,
     mouseDrag: true,
     touchDrag: true,
     pullDrag: true,
     dots: true,
-    navSpeed: 700, 
-    stagePadding: 0,   
+    navSpeed: 700,
+    stagePadding: 0,
     navText: ['', ''],
     responsive: {
       0: {
         items: 1
-               
+
       },
       25: {
         items: 2
-        
+
       },
       20: {
         items: 3
@@ -129,7 +133,7 @@ export class HeaderComponent {
     },
     nav: true
   }
-  
-  	
+
+
 
 }

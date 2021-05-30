@@ -1,12 +1,12 @@
 <header id="container" class="navbar navbar-expand-md navbar-light bg-light">
   <!-- <div class= "navbar-header fixed-top">
         <div class="bannerheader" role="banner" >
-       
+
              <a class="navbar-brand" data-cy="navbarLogoLink" href="/" title="Inicio" >
                 <img src="assets/LOGOLICRO.png"
                 alt="Licro Logo"
                 class="visible-xs-inline visible-sm-inline visible-md-inl" width="100">
-                
+
             </a>
             <button class= "navbar-toggler btn-colapse"
             type="button"
@@ -20,53 +20,53 @@
             <span class="navbar-toggler-icon"></span>
           </button>
             <div class="order-items">
-          
+
               <nav class="collapse navbar-collapse" id="navbarsExampleDefault">
               <ul class="navbar-nav mr-auto">
                   <li class="nav-item active">
-                      
+
                     <a class="nav-link" aria-label="Pagina do Gerador" target="_blank" rel="noopener" href="https://twitter.com/angular" title="Gerador">
                     <span>Gerador</span>
                     </a>
                   </li>
-              
-  
+
+
                   <li class="nav-item" >
-  
+
                     <a class="nav-link" aria-label="Pagina do Gerador" target="_blank" rel="noopener" href="https://twitter.com/angular" title="Gerador">
                       <span>Anúncio Comprador</span>
                       </a>
                   </li>
-  
+
                   <li class="nav-item" >
-  
+
                     <a class="nav-link" aria-label="Pagina do Gerador" target="_blank" rel="noopener" href="https://twitter.com/angular" title="Gerador">
                       <span>Como Funciona</span>
                       </a>
                   </li>
-  
+
                   <li class="nav-item" >
                   <a class="nav-link" aria-label="Pagina do Gerador" target="_blank" rel="noopener" href="https://twitter.com/angular" title="Gerador">
                     <span>Premium</span>
                     </a>
                   </li>
-                  
+
               </ul>
-  
+
               <a routerLink = "cadastro" id= "text" class="nav-link" aria-label="Pagina do Gerador" target="_blank" rel="noopener" title="Gerador" >
                   <span>Cadastre-se</span>
-                  </a> 
+                  </a>
               <a id= "text" class = "nav-link" aria-label="Entrar" target="_blank" rel="noopener"  title="Anuncie Grátis"  href="https://twitter.com/angular" >
               <span>Entrar</span>
-              </a>    
-              
+              </a>
+
              <span class="nav-linkBtn"> <a href="/" class="btn transitions animated fadeIn" data-ga-category="Home" data-cy="postProjectCTA" title="Faça um lance">
-              
+
               Anuncie Grátis
               </a></span>
               </nav>
-            </div> 
-           
+            </div>
+
     </div>
 </div> -->
   <div class="navbar-header fixed-top bannerheader">
@@ -387,6 +387,9 @@
         </button>
       </form>
     </div>
+  </div>
+  <div [hidden]="index != 1">
+    <app-plataforma [anuncios]="anuncios"></app-plataforma>
   </div>
 
   <router-outlet></router-outlet>
