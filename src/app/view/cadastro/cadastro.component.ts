@@ -24,9 +24,10 @@ import { AccountService } from 'src/app/account/shared/account.service';
 export class CadastroComponent implements OnInit {
   submitted = false;
   form!: FormGroup;
-   
+  userRegister: User = new User();
 
-  constructor( 
+
+  constructor(
     private fb: FormBuilder,
     private http: HttpClient,
     private alertService: AlertService,
@@ -34,7 +35,7 @@ export class CadastroComponent implements OnInit {
     private accountService: AccountService,
     private router: Router
     //private service: CadastroService,
-    
+
     ){
    }
 
@@ -48,65 +49,67 @@ export class CadastroComponent implements OnInit {
      email: ['', [Validators.required,  Validators.email]],
      senha: ['', [Validators.required, Validators.minLength(6), Validators.nullValidator]],
      confirmeSenha:['', [Validators.required, Validators.nullValidator] ],
-     termos:[false, [Validators.requiredTrue]],
-     
+     termo:[false, [Validators.requiredTrue]],
+
 },{
 validator: MustMatch('senha', 'confirmeSenha')
 });
 ngOnInit(): void { }
-  
-onSubmit() {
 
-  
+onSubmit(form:any) {
+
+
   this.submitted = true;
   this.alertService.clear();
   if (this.cadastro.invalid) {
     return;
 }
         {{debugger}}
+
         this.accountService.register(this.cadastro.value)
+
             .pipe(take(1))
             .subscribe({
                 next: () => {
                     this.alertService.success('Registration successful', { keepAfterRouteChange: true });
-                    alert('Cadastro Realizado com Sucesso!! :-)\n\n') 
+                    alert('Cadastro Realizado com Sucesso!! :-)\n\n')
                     this.router.navigate(['login'], { relativeTo: this.route });
                 },
                 error: error => {
                     this.alertService.error(error);
-                    
+
                 }
             });
 
 
-// this.service.create(this.cadastro.getRawValue()).subscribe((data: 
+// this.service.create(this.cadastro.getRawValue()).subscribe((data:
 //   {}) => {
 //         this.router.navigate(['login'])
 //       })
-//       alert('Cadastro Realizado com Sucesso!! :-)\n\n') 
-  
+//       alert('Cadastro Realizado com Sucesso!! :-)\n\n')
+
   //  JSON.stringify(this.cadastro.getRawValue()))
 
- 
 
-  
-    
+
+
+
 
   // this.http.post('http://httpbin.org/post', JSON.stringify(this.cadastro.value)).pipe(take(1))
   // .subscribe(dados => {
   //    console.log(dados)
-    
+
  // exibir valores de formulário em sucesso exibir valores de formulário em caso de sucesso
-  
- 
- 
+
+
+
  //resertar formulario
     // this.resetar();
 
     // },(error:any) => alert('erro'));
-    
 
-    
+
+
 
 }
 
@@ -123,7 +126,7 @@ resetar(){
   //     }
 
   //     const field = (<FormGroup>formControl.root).get(otherField);
-      
+
   //     if (!field){
   //       throw new Error ('É necessário informar um campo valido.')
   //     }
@@ -137,7 +140,7 @@ resetar(){
   //     };
   //   return validator;
   //   }
-    
+
 
 }
 //Função para comprar senha

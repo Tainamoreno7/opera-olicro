@@ -1,31 +1,32 @@
 
     <mat-toolbar>
-        <a routerLink = "plataforma" >
-        <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon" (click)="home()">
-          <mat-icon>menu</mat-icon>
+      <mat-icon>menu</mat-icon>
+        <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon" (click)="listAll()">
+          <a><span>Plataforma</span> </a>
         </button>
-        <span>Plataforma</span>
-        </a>
+
         <span class="example-spacer"></span>
+        <mat-icon>bubble_char</mat-icon>
         <button mat-icon-button [matMenuTriggerFor]="menu" class="example-icon">
-            <a ><mat-icon>bubble_char</mat-icon>
-            Meus Resíduos</a></button>
+            <a>Meus Resíduos</a></button>
         <mat-menu #menu="matMenu">
-        <button mat-menu-item (click)="listarResiduo()">
+        <button mat-menu-item (click)="listRegister()">
             <a>
                 <mat-icon>add_box</mat-icon>Resíduos Cadastrados</a></button>
         <button mat-menu-item>
             <a href="/residuo/update/">
                 <mat-icon>update</mat-icon>Resíduos Atualizados</a></button>
-        
+
         </mat-menu>
+
+
         <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
-            <a href="/anuncio/hearted"><mat-icon>assignment</mat-icon> Meus Favoritos</a> 
+            <a href="/anuncio/hearted"><mat-icon>assignment</mat-icon> Meus Favoritos</a>
         </button>
         <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
             <a href="/anuncio/hearted"><mat-icon>favorite</mat-icon>Meus Favoritos</a>
         </button>
-        
+
         <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
             <a href="/conteudo/pagamento/"> <mat-icon>monetization_on</mat-icon>Meus Contatos</a>
           </button>
@@ -34,8 +35,10 @@
       <div [hidden]="index != 1">
         <app-anuncios-lista [anuncios]="anuncios"></app-anuncios-lista>
       </div>
+      <div [hidden]="index != 2">
+        <app-plataforma [anuncios]="anuncios"></app-plataforma>
+      </div>
 
 
       <router-outlet></router-outlet>
 
-      

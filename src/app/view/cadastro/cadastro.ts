@@ -1,12 +1,13 @@
+import { Login } from "@app/shared/model/login";
+
 export interface Cadastro{
      id: number,
      nome: string,
      sobrenome: string,
      pais: string,
      whatsapp: string,
-     email: string,
-     senha:string,
-     confirmeSenha:string, 
+     login: Login,
+     confirmeSenha:string,
      termos: boolean
 
 }

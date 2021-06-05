@@ -15,6 +15,8 @@ export class LoginComponent implements OnInit {
   loading = false;
   submitted = false;
 
+    error = '';
+
 
 
   constructor(
@@ -23,7 +25,7 @@ export class LoginComponent implements OnInit {
         private router: Router,
         private accountService: AccountService,
         private alertService: AlertService
-    
+
   ) { }
 
   ngOnInit(): void {
@@ -31,15 +33,15 @@ export class LoginComponent implements OnInit {
       email: ['', [Validators.required, Validators.email]],
       senha: ['', [Validators.required, Validators.minLength(6)]]
     });
-      
-    
+
+
   }
    get f() { return this.form.controls; }
 
   // convenience getter for easy access to form fields
-  
 
- 
+
+
 
   onSubmit() {
       this.submitted = true;
@@ -55,23 +57,41 @@ export class LoginComponent implements OnInit {
       this.loading = true;
       {{debugger}}
       this.accountService.login(this.f.email.value, this.f.senha.value)
-     
+
           .pipe(first())
-          .subscribe({
-            
-              next: () => {
-                  // get return url from query parameters or default to home page
-                  const returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
+          .subscribe(
+
+              data => {
+                debugger
+                const  returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
                   this.router.navigateByUrl(returnUrl);
                   this.accountService.isLogging = true;
                   this.accountService.isLogging$.next(true)
               },
-              error: error => {
-                  this.alertService.error(error);
+              error => {
+                  this.error = error;
                   this.loading = false;
-              }
-              
-          });
+              });
+
+
+
+              // next: () => {
+              //   debugger
+              //     // get return url from query parameters or default to home page
+              //     const returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
+              //     this.router.navigateByUrl(returnUrl);
+              //     this.accountService.isLogging = true;
+              //     this.accountService.isLogging$.next(true)
+              // },
+              // error: error => {
+              //     this.alertService.error(error);
+              //     this.loading = false;
+              // }
+
+
+
+
+
           {{debugger}}
   }
 }

@@ -5,6 +5,7 @@ import { BehaviorSubject, Observable, Subject } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { environment } from '../../../environments/environment';
 import { User } from '../../shared/model/user'
+import { Login } from '@app/shared/model/login';
 
 @Injectable({
   providedIn: 'root'
@@ -22,15 +23,22 @@ export class AccountService {
   //o valor inicial do BehaviorSubject vem do local storage
     this.userSubject = new BehaviorSubject<User>(JSON.parse(''+ window.localStorage.getItem('user')));
     this.user = this.userSubject.asObservable();
-}  
+}
 
 public get userValue(): User{
   return this.userSubject.value;
 }
 
 login(email:string, senha:string) {
-  return this.http.post<User>(`${environment.apiUrl}/users/authenticate`, { email, senha})
+  {{debugger}}
+
+  var login = new Login();
+  login.email = email;
+  login.senha = senha;
+
+  return this.http.post<User>(`${environment.apiUrl}Login/Authentication`, login)
       .pipe(map(user => {
+        debugger
           // store user details and jwt token in local storage to keep user logged in between page refreshes
           localStorage.setItem('user', JSON.stringify(user));
           this.userSubject.next(user);
@@ -45,13 +53,23 @@ logout() {
   this.router.navigate(['/']);
 }
 
-register(user: User) {
+register(user: any) {
+  var userRegister = new User();
+
+  userRegister.login.email = user.email;
+  userRegister.login.senha = user.senha;
+  userRegister.nome = user.nome;
+  userRegister.sobrenome = user.sobrenome;
+  userRegister.pais = user.pais;
+  userRegister.termo = user.termo;
+  userRegister.whatsapp = user.whatsapp;
+
   {{debugger}}
-  return this.http.post(`${environment.apiUrl}users/register`, user);
+  return this.http.post(`${environment.apiUrl}user/register`, userRegister);
 }
 
 getAll() {
-  return this.http.get<User[]>(`${environment.apiUrl}/users`);
+  return this.http.get<User[]>(`${environment.apiUrl}users`);
 }
 
 getById(id: number) {
@@ -84,7 +102,7 @@ getById(id: number) {
 //           return x;
 //       }));
 }
-  
+
 
 // login( user:any){
     //   return new Promise((resolver) => {
@@ -96,5 +114,5 @@ getById(id: number) {
     // logout(){
 
     // window.localStorage.removeItem('token');
-      
+
     // }

@@ -3,19 +3,21 @@
   box-sizing: border-box;
   margin:0;
   padding: 0;
-  
+
  }
 
  .navbar-header{
    display: flex;
-  
-    
-  
+
+
  }
- 
+
+ a{
+   cursor: pointer;
+ }
  .bannerheader {
    position: fixed;
-   height: auto;   
+   height: auto;
    width: 100%;
    align-items:center;
    display: inline-table;
@@ -23,8 +25,8 @@
    margin: 0 auto;
    padding-left: 7%;
   }
-  
-  
+
+
   .btn-colapse{
     padding: 0;
     margin: 1rem 1rem 1rem 0;
@@ -53,7 +55,7 @@ p {
   .navbar-nav{
     display: flex;
     float: left;
-    margin-right: 3.5rem;
+    margin-right: 3.0rem;
   }
 
   .nav-link{
@@ -69,7 +71,7 @@ p {
     white-space: nowrap;
     padding: 1rem 0 0 0;
   }
-  
+
 .nav-item{
   color: white;
   float: left;
@@ -82,7 +84,7 @@ p {
 }
 
 
-.btn{   
+.btn{
   background: #DBB334;
   border-radius: 25rem;
   color: black;
@@ -94,8 +96,8 @@ p {
 .container-carrosel{
   background-color: #49708C;
   overflow-x: hidden;
-  
-} 
+
+}
 
 mat-label, #textseach{
 
@@ -106,7 +108,7 @@ color: #34814D;
 mat-body, .mat-body-1, .mat-typography {
   font: 400 14px/30px Roboto, "Helvetica Neue", sans-serif;
   letter-spacing: normal;
-  
+
 
 }
 
@@ -117,7 +119,7 @@ mat-body, .mat-body-1, .mat-typography {
   margin-top: 1rem;
   margin-bottom: 1rem;
   width: 75rem;
- 
+
 }
 
 
@@ -132,21 +134,21 @@ mat-body, .mat-body-1, .mat-typography {
 input{
   color: #34814D;
 
-  
+
 }
 .icon{
- 
+
   color:#34814D ;
 }
-.categoria, .estado, .oferta{
- height: 3rem;
+.categoria, .estado, .oferta, .ordenar{
+ height: 2rem;
 
 }
 #search{
   background-color: #34814D;
   color: white;
   width: 5.9rem;
-  height: 2.3rem;
+  height: 2rem;
 }
 
 .mat-select-panel:not([class*=mat-elevation-z]) {
@@ -157,20 +159,20 @@ input{
 
 
 .carrosel{
-    padding-top: 1%;      
+    padding-top: 1%;
     background-color: #49708C;
     width: 60%;
     margin-left: 20%;
     margin-top: 4%;
-    
-    
+
+
   }
-  
+
   .bannerheader img {
     padding-left: 8%;
-    margin-right: 35px; 
+    margin-right: 35px;
 
-    
+
   }
 
   .icones img{
@@ -180,13 +182,13 @@ input{
     bottom: 0;
     margin-top: 10%;
     ;
-    
+
   }
-  
+
   .icones span{
     color: #fff;
     font-size: 1rem;
-    
+
   }
 
   @media screen and (max-width: 1100px){
@@ -203,16 +205,16 @@ input{
         display: inline;
         white-space: nowrap;
         padding: 1rem 0 0 1rem;
-      }  
-  
+      }
+
     #navbarsExampleDefault > ul{
        align-items: flex-start !important;
     }
- 
+
     #navbarsExampleDefault > ul li.ml-auto{
        margin-left: inherit !important;
     }
- 
+
     #navbarsExampleDefault > ul li.ml-auto .mr-4{
        margin-right: inherit !important;
     }
@@ -259,8 +261,7 @@ input{
   .bannerheader img {
     margin: auto;
   }
-    
+
  }
 
-  
-  
+

@@ -4,8 +4,8 @@ import { CommonModule } from '@angular/common';
 
 import { AccountRoutingModule } from './account-routing.module';
 import {AuthenticationComponent} from '../../layout/authentication/authentication.component';
-import {LoginComponent } from '../../view/login/login.component';
-import { CadastroComponent} from '../../view/cadastro/cadastro.component';
+// import {LoginComponent } from '../../view/login/login.component';
+//import { CadastroComponent} from '../../view/cadastro/cadastro.component';
 import { HomeComponent } from 'src/app/view/home/home.component';
 @NgModule({
     imports: [
@@ -15,8 +15,8 @@ import { HomeComponent } from 'src/app/view/home/home.component';
     ],
     declarations: [
         AuthenticationComponent,
-        LoginComponent,
-        CadastroComponent,
+        // LoginComponent,
+        //CadastroComponent,
         HomeComponent
     ]
 })

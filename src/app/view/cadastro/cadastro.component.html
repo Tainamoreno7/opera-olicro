@@ -1,11 +1,11 @@
 <div class="panel-body" style="padding: 30px;">
   <div class="accordion accordion-lg divcenter nobottommargin clearfix" style="max-width: 550px;">
-  
+
   <div class="acctitle acctitlec" id="acc_register"><i class="acc-closed icon-user4" style="color:#1b75ba"></i><i class="acc-open icon-ok-sign" style="color:#1b75ba"></i>Cadastre-se gratuitamente!</div>
   <div class="acc_content clearfix noleftmargin noleftpadding" >
 
 
-  <form  [formGroup]="cadastro" (ngSubmit) = "onSubmit()" id="register_form" name="register_form" class="nobottommargin">
+  <form  [formGroup]="cadastro" (ngSubmit) = "onSubmit(cadastro)" id="register_form" name="register_form" class="nobottommargin">
   <div class="col_full">
   <div class="col_half">
   <label for="userNome" class="form-control-label">NOME</label>
@@ -13,7 +13,7 @@
   <div *ngIf="submitted && f.nome.errors" class="invalid-feedback">
     <div *ngIf="f.nome.errors.required">Nome é Obrigatório</div>
 </div>
-  
+
 </div>
 
   <div class="col_half col_last">
@@ -321,11 +321,11 @@
 </div>
   </div>
   <div class="col_full">
-  <input type="checkbox" name="userTermos"  class="checkbox-style" id="id_userTermos" formControlName = "termos">
+  <input type="checkbox" name="userTermos"  class="checkbox-style" id="id_userTermos" formControlName = "termo">
   <label class="checkbox-style-1-label" for="id_termos">
     <a href="/termos-de-uso/" data-lightbox="ajax">LI E ACEITO OS TERMOS DE USO DA LICRO.COM*</a>
   </label>
-  <div *ngIf="submitted && f.termos.errors" class="invalid-feedback">Aceitar o termo é Obrigatório </div>
+  <div *ngIf="submitted && f.termo.errors" class="invalid-feedback">Aceitar o termo é Obrigatório </div>
   </div>
 
   <input name="next" value="" class="form-control" id="" type="hidden">
@@ -334,14 +334,14 @@
   </div>
   </form>
   </div>
-  
-  
+
+
   <div class="acctitle" id="acc_login">
-      
+
   <a [routerLink] = "['/login']" id= "text" class = "nav-link" aria-label="login" target="_blank" rel="noopener">Faça o login na <strong>Licro.com</strong></a>
   </div>
 
 
 
     </div>
-  </div>  
+  </div>

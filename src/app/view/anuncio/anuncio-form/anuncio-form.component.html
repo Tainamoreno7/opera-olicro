@@ -11,7 +11,6 @@
       noleftpadding
     "
     id="body_inside_conteudo_on_div"
-    
   >
     <div class="col_full divcenter nobottommargin">
       <div class="heading-block">
@@ -21,8 +20,9 @@
       </div>
       <div class="col_full divcenter nobottommargin col_last"></div>
       <div class="col_half nobottommargin">
-        <div class="font-primary">
+        <div [hidden]="index != 0" class="font-primary">
           <h4>Anuncie Grátis</h4>
+
           <p>
             Você já informou quais são seus resíduos gerados (venda) e de
             interesse (compra)?<br />
@@ -31,6 +31,69 @@
               anúnciar.</strong
             ><br />
           </p>
+        </div>
+        <div [hidden]="index != 1" class="font-primary">
+          <h4>
+            Estamos criando o anúncio para
+            <strong> [(ngModel)]=" anuncio.residuo"</strong>
+          </h4>
+
+          <p>
+            Lembre-se que não é permitido colocar informações de contato como
+            e-mail ou telefone.<br />
+            <strong
+              >Informe o máximo de detalhes sobre o seu resíduo aumentando suas
+              chances de negociação.</strong
+            ><br />
+          </p>
+        </div>
+
+        <div [hidden]="index != 2" class="font-primary">
+          <h4>Quantidades</h4>
+          <h5>Quantidade e Frequência</h5>
+          <p>
+            Qual a quantidade e quanto de resíduo você quer vender?<br />
+            <strong
+              >Informe também a frequência de coleta e por quanto tempo o
+              contrato de fornecimento do resíduo será vigente.</strong
+            >
+          </p>
+        </div>
+        <div [hidden]="index != 3" class="font-primary">
+          <h4>Logística</h4>
+          <h5>Transporte e Endereço do Resíduo</h5>
+          <p>
+            Precisamos saber mais alguns detalhezinhos sobre seu resíduo.<br />
+            <strong
+              >Informe sobre a situação atual do resíduo e os serviços que você
+              oferece para facilitar a decisão do comprador.</strong
+            >
+          </p>
+        </div>
+        <div [hidden]="index != 4" class="font-primary">
+          <h4>
+            Fotos
+            <a
+              class="pop-me-over"
+              data-toggle="popover"
+              data-placement="top"
+              data-content="Com elas os compradores já terão uma boa ideia do que procuram e poderão até mesmo poupar algumas perguntas ou pedir (ou não) uma amostra."
+              data-title="Tire fotos!"
+              data-original-title=""
+              title=""
+            >
+              <i
+                class="i-circled i-light i-small icon-info"
+                title="Tire fotos!"
+              ></i
+            ></a>
+          </h4>
+          <h5>Insira fotos do seu resíduo</h5>
+          <strong
+            >Com elas as suas chances de negociação serão muito maiores e o seu
+            resíduo estará fielmente representado.</strong
+          >
+          <p></p>
         </div>
       </div>
       <form
@@ -42,198 +105,1162 @@
       >
         <input type="hidden" name="csrfmiddlewaretoken" value="" />
         <div class="col_full" id="start_anuncio">
-          <div
-            class="col_half nopadding nobottommargin"
-            style="line-height: 28px !important"
-          >
-            <div class="col_full bottommargin-sm">
-              <div class="col_last">
-                <a
-                  name="type_deal"
-                  class="pop-me-over"
-                  data-toggle="popover"
-                  data-placement="top"
-                  data-content=""
-                  data-title="Qual o tipo de anúncio?"
-                  data-original-title=""
-                  title=""
-                ></a>
-              </div>
-              <label>Qual o tipo de anúncio?</label>
-              <div
-                class="col_full bottommargin-sm"
-              
-              >
-                <div class="">
-                  <input
-                    type="radio"
-                    name="TipoNegocio"
-                    value="1"
-                    for="TipoNegocio"
-                    form="tipoNegocio"
-                    class="radio-style"
-                    id="tipoNegocio"
-                    [(ngModel)]="anuncio ? anuncio.tipoNegocio : residuo.tipoNegocio"
-                    required=""
-                  />
-                  <label class="radio-style-1-label" for="id_TipoNegocio0"
-                    >Venda</label
-                  >
-                </div>
-                <div class="">
-                  <input
-                    type="radio"
-                    name="TipoNegocio"
-                    value="2"
-                    form="TipoNegocio"
-                    class="radio-style"
-                    id="TipoNegocio"
-                    [(ngModel)]="anuncio ? anuncio.tipoNegocio : residuo.tipoNegocio"
-                    required=""
-                  />
-                  <label class="radio-style-1-label" for="id_tipoNegocio1"
-                    >Compra</label
-                  >
-                </div>
-                <div class="">
-                  <input
-                    type="radio"
-                    name="TipoNegocio"
-                    value="3"
-                    form="tipoNegocio"
-                    class="radio-style"
-                    id="tipoNegocio"
-                    [(ngModel)]="anuncio ? anuncio.tipoNegocio : residuo.tipoNegocio"
-                    required=""
-                  />
-                  <label class="radio-style-1-label" for="id_tipoNegocio2"
-                    >Doação</label
-                  >
-                </div>
-               
-              </div>
-            </div>
-          </div>
-          <div class="col_half col_last">
-            <div class="col_full bottommargin-sm">
-              <div class="col_last">
-                <a
-                  class="pop-me-over"
-                  data-toggle="popover"
-                  data-placement="top"
-                  data-content="Escolha o tipo de resíduo."
-                  data-title="Categoria"
-                  data-original-title=""
-                  title=""
-                  ><i
-                    class="i-circled i-light i-small icon-info"
-                    title="Escolha o tipo de resíduo."
-                  ></i
-                ></a>
-              </div>
-              <label>Categoria</label>
-              <div class="col_full bottommargin-sm"
-              
+          <div [hidden]="index != 0">
+            <div
+              class="col_half nopadding nobottommargin"
+              style="line-height: 28px !important"
             >
-                <select
-                  name="TipoCategoria"
-                type = "number"
-                  required=""
-                  class="form-control"
-                  id="TipoCategoria"
-                  for="TipoCategoria"
-                  [(ngModel)]="anuncio ? anuncio.tipoCategoria : residuo.tipoCategoria"
-                  
-                >
-                  <option value="1">Borracha</option>
-                  <option value="2">Classe I (Perigosos)</option>
-                  <option value="3">Construção e Demolição</option>
-                  <option value="4">Covid-19</option>
-                  <option value="5">Eletroeletrônicos</option>
-                  <option value="6">Madeira</option>
-                  <option value="7">Metais</option>
-                  <option value="8">Orgânicos</option>
-                  <option value="9">Outros</option>
-                  <option value="10">Papel/Papelão</option>
-                  <option value="11">Plástico</option>
-                  <option value="12">Produtos de 2a linha</option>
-                  <option value="13">Químicos</option>
-                  <option value="14">Sucata Geral</option>
-                  <option value="15">Tecido</option>
-                  <option value="16">Vidro</option>
-                </select>
-                
+              <div class="col_full bottommargin-sm">
+                <div class="col_last">
+                  <a
+                    name="type_deal"
+                    class="pop-me-over"
+                    data-toggle="popover"
+                    data-placement="top"
+                    data-content=""
+                    data-title="Qual o tipo de anúncio?"
+                    data-original-title=""
+                    title=""
+                  ></a>
+                </div>
+                <label>Qual o tipo de anúncio?</label>
+                <div class="col_full bottommargin-sm">
+                  <div class="">
+                    <input
+                      type="radio"
+                      name="tipoNegocio"
+                      value="1"
+                      for="TipoNegocio"
+                      form="tipoNegocio"
+                      class="radio-style"
+                      id="tipoNegocio"
+                      [(ngModel)]="
+                        anuncio ? anuncio.tipoNegocio : residuo.tipoNegocio
+                      "
+                      required=""
+                    />
+                    <label class="radio-style-1-label" for="id_TipoNegocio0"
+                      >Venda</label
+                    >
+                  </div>
+                  <div class="">
+                    <input
+                      type="radio"
+                      name="tipoNegocio"
+                      value="2"
+                      form="TipoNegocio"
+                      class="radio-style"
+                      id="TipoNegocio"
+                      [(ngModel)]="
+                        anuncio ? anuncio.tipoNegocio : residuo.tipoNegocio
+                      "
+                      required=""
+                    />
+                    <label class="radio-style-1-label" for="id_tipoNegocio1"
+                      >Compra</label
+                    >
+                  </div>
+                  <div class="">
+                    <input
+                      type="radio"
+                      name="tipoNegocio"
+                      value="3"
+                      form="tipoNegocio"
+                      class="radio-style"
+                      id="tipoNegocio"
+                      [(ngModel)]="
+                        anuncio ? anuncio.tipoNegocio : residuo.tipoNegocio
+                      "
+                      required=""
+                    />
+                    <label class="radio-style-1-label" for="id_tipoNegocio2"
+                      >Doação</label
+                    >
+                  </div>
+                </div>
               </div>
             </div>
-            <div class="col_full nobottommargin-sm">
-              <div class="col_last">
-                <a
-                  class="pop-me-over"
-                  data-toggle="popover"
-                  data-placement="top"
-                  data-content="Digite, aperte enter para selecionar ou clique em criar"
-                  data-title="Resíduo"
-                  data-original-title=""
-                  title=""
-                >
-                </a>
+            <div class="col_half col_last">
+              <div class="col_full bottommargin-sm">
+                <div class="col_last">
+                  <a
+                    class="pop-me-over"
+                    data-toggle="popover"
+                    data-placement="top"
+                    data-content="Escolha o tipo de resíduo."
+                    data-title="Categoria"
+                    data-original-title=""
+                    title=""
+                    ><i
+                      class="i-circled i-light i-small icon-info"
+                      title="Escolha o tipo de resíduo."
+                    ></i
+                  ></a>
+                </div>
+                <label>Categoria</label>
+                <div class="col_full bottommargin-sm">
+                  <select
+                    name="tipoCategoria"
+                    type="number"
+                    required=""
+                    class="form-control"
+                    id="TipoCategoria"
+                    for="TipoCategoria"
+                    [(ngModel)]="
+                      anuncio ? anuncio.tipoCategoria : residuo.tipoCategoria
+                    "
+                  >
+                    <option value="1">Borracha</option>
+                    <option value="2">Classe I (Perigosos)</option>
+                    <option value="3">Construção e Demolição</option>
+                    <option value="4">Covid-19</option>
+                    <option value="5">Eletroeletrônicos</option>
+                    <option value="6">Madeira</option>
+                    <option value="7">Metais</option>
+                    <option value="8">Orgânicos</option>
+                    <option value="9">Outros</option>
+                    <option value="10">Papel/Papelão</option>
+                    <option value="11">Plástico</option>
+                    <option value="12">Produtos de 2a linha</option>
+                    <option value="13">Químicos</option>
+                    <option value="14">Sucata Geral</option>
+                    <option value="15">Tecido</option>
+                    <option value="16">Vidro</option>
+                  </select>
+                </div>
               </div>
-              <label> Resíduo</label>
-              <div class="col_full bottommargin-sm"
-              [ngClass]="{
-                'form-group': true,
-                'has-danger': !Resnome.valid && !Resnome.pristine,
-                'has-success': Resnome.valid && !Resnome.pristine
-              }">
-                <input
-                  type="text"
-                  name="Residuo"
-                  data-placeholder="Digite o nome resíduo e aperte enter"
-                  data-minimum-input-length="2"
-                  id="residuo"
-                  for="residuo"
-                  class="select2-hidden-accessible"
-                  aria-hidden="true"
-                  #Resnome="ngModel"
-                  [(ngModel)]="anuncio ? anuncio.residuo : residuo.residuo"
-                  required
-                  maxlength="20"
-                  minlength="3"
-                />
-                <div
-              class="form-control-feedback"
-              [hidden]="Resnome.valid || Resnome.pristine"
-            >
-              O campo deve ter minimo 3 caratere
-            </div>
-              </div>
+              <div class="col_full nobottommargin-sm">
+                <div class="col_last">
+                  <a
+                    data-toggle="popover"
+                    data-placement="top"
+                    data-title="Resíduo"
+                    data-original-title=""
+                    title=""
+                  ></a>
+                </div>
+                <label>Resíduo</label>
+                <div class="col_full bottommargin-sm">
+                  <div
+                    class="col_full bottommargin-sm"
+                    [ngClass]="{
+                      'form-group': true,
+                      'has-danger': !Resnome.valid && !Resnome.pristine,
+                      'has-success': Resnome.valid && !Resnome.pristine
+                    }"
+                  >
+                    <input
+                      type="text"
+                      name="residuo"
+                      data-placeholder="Digite o nome resíduo e aperte enter"
+                      data-minimum-input-length="2"
+                      id="residuo"
+                      for="residuo"
+                      aria-hidden="true"
+                      #Resnome="ngModel"
+                      [(ngModel)]="anuncio ? anuncio.residuo : residuo.residuo"
+                      required
+                      maxlength="20"
+                      minlength="3"
+                    />
+                    <div
+                      class="form-control-feedback"
+                      [hidden]="Resnome.valid || Resnome.pristine"
+                    >
+                      O campo deve ter minimo 3 caratere
+                    </div>
+                  </div>
+                  <!-- <select name="nome_residuo" data-placeholder="Digite o nome resíduo e aperte enter"
+                    data-minimum-input-length="2" required="" id="id_nome_residuo"
+                    data-autocomplete-light-language="pt-BR"
+                    data-autocomplete-light-url="/residuo/residuo-autocomplete/"
+                    data-autocomplete-light-function="select2" data-select2-id="id_nome_residuo" tabindex="-1"
+                    class="select2-hidden-accessible" aria-hidden="true">
+                    <option value="" selected="" data-select2-id="1">---------</option>
 
+                  </select><span
+                    class="select2 select2-container select2-container--default select2-container--below select2-container--focus"
+                    dir="ltr" data-select2-id="2" style="width: 71.25px;"><span class="selection"><span
+                        class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true"
+                        aria-expanded="false" tabindex="0" aria-labelledby="select2-id_nome_residuo-container"><span
+                          class="select2-selection__rendered" id="select2-id_nome_residuo-container" role="textbox"
+                          aria-readonly="true"><span class="select2-selection__placeholder">Digite o nome resíduo e
+                            aperte enter</span></span><span class="select2-selection__arrow" role="presentation"><b
+                            role="presentation"></b></span></span></span><span class="dropdown-wrapper"
+                      aria-hidden="true"></span></span> -->
+                </div>
+              </div>
+              <!--<div class="col_last">
+                  <a class="pop-me-over" data-toggle="popover" data-placement="top"
+                    data-content="Digite, aperte enter para selecionar ou clique em criar" data-title="Resíduo"
+                    data-original-title="" title="">
+                  </a>
+                </div>
+                 <label> Resíduo</label>
+                <div class="col_full bottommargin-sm"  data-select2-id="4">
+                  <select name="nome_residuo" data-placeholder="Digite o nome resíduo e aperte enter"
+                    data-minimum-input-length="2" required="" id="id_nome_residuo"
+                    data-autocomplete-light-language="pt-BR"
+                    data-autocomplete-light-url="/residuo/residuo-autocomplete/"
+                    data-autocomplete-light-function="select2" data-select2-id="id_nome_residuo" tabindex="-1"
+                    class="select2-hidden-accessible" aria-hidden="true" [(ngModel)]="anuncio ? anuncio.residuo : residuo.residuo"
+                    required maxlength="20" minlength="3">
+                    <option value="" selected="" data-select2-id="1">---------</option>
+
+                  </select><span
+                    class="select2 select2-container select2-container--default select2-container--below select2-container--focus"
+                    dir="ltr" data-select2-id="2" style="width: 71.25px;"><span class="selection"><span
+                        class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true"
+                        aria-expanded="false" tabindex="0" aria-labelledby="select2-id_nome_residuo-container"><span
+                          class="select2-selection__rendered" id="select2-id_nome_residuo-container" role="textbox"
+                          aria-readonly="true"><span class="select2-selection__placeholder">Digite o nome resíduo e
+                            aperte enter</span></span><span class="select2-selection__arrow" role="presentation"><b
+                            role="presentation"></b></span></span></span><span class="dropdown-wrapper"
+                      aria-hidden="true"></span></span>
+                </div> -->
+              <!-- -->
+            </div>
+            <!-- <input type="hidden" value="new" name="new" /> -->
+
+            <div class="col_full nopadding">
+              <div class="row nomargin">
+                <span class="error_message"></span>
+                <input
+                  class="button button-3d button-green nomargin"
+                  type="button"
+                  id="register-form-submit"
+                  value="Próxima Etapa"
+                  (click)="next1()"
+                />
+              </div>
             </div>
           </div>
-          <input type="hidden" value="new" name="new" />
-          <!-- <input
-            name="email"
-            value=""
-            id="id_hidden_email"
-            type="email"
-            style="
-              position: absolute !important;
-              left: -30000px !important;
-              opacity: 0 !important;
-            "
-          />
-          <input
-            name="empresa_id"
-            value="69950"
-            id="id_hidden_empresa_id"
-            type="number"
-            style="
-              position: absolute !important;
-              left: -30000px !important;
-              opacity: 0 !important;
-            "
-          /> -->
-          <div class="col_full nopadding">
+
+          <div [hidden]="index != 1" class="nobottommargin clearfix">
+            <input type="hidden" name="type_deal" value="1" id="id_type_deal" />
+
+            <div class="col_two_fifth nopadding">
+              <div class="row nomargin">
+                <label>Título</label>
+                <div class="col_full">
+                  <input
+                    value="titulo"
+                    type="text"
+                    name="titulo"
+                    [(ngModel)]="anuncio ? anuncio.titulo : residuo.titulo"
+                    placeholder="Digite o título do seu anúncio"
+                    class="form-control tooltipstered"
+                    required=""
+                    id="id_titulo"
+                  />
+                </div>
+              </div>
+              <div class="col_full bottommargin-sm">
+                <label>Qual a origem desse resíduo?</label>
+
+                <div class="">
+                  <input
+                    type="radio"
+                    name="tipoOrigem"
+                    value="1"
+                    class="radio-style"
+                    id="id_origem_0"
+                    required=""
+                    [(ngModel)]="
+                      anuncio ? anuncio.tipoOrigem : residuo.tipoOrigem
+                    "
+                  />
+                  <label class="radio-style-1-label" for="id_origem_0">
+                    Pós-indústria</label
+                  >
+                </div>
+
+                <div class="">
+                  <input
+                    type="radio"
+                    name="tipoOrigem"
+                    value="2"
+                    class="radio-style"
+                    id="id_origem_1"
+                    required=""
+                    [(ngModel)]="
+                      anuncio ? anuncio.tipoOrigem : residuo.tipoOrigem
+                    "
+                  />
+                  <label class="radio-style-1-label" for="id_origem_1">
+                    Pós-consumo</label
+                  >
+                </div>
+
+                <div class="">
+                  <input
+                    type="radio"
+                    name="tipoOrigem"
+                    value="3"
+                    class="radio-style"
+                    id="id_origem_2"
+                    required=""
+                    [(ngModel)]="
+                      anuncio ? anuncio.tipoOrigem : residuo.tipoOrigem
+                    "
+                  />
+                  <label class="radio-style-1-label" for="id_origem_2">
+                    Outros</label
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div class="col_three_fifth col_last">
+              <div class="row nomargin">
+                <label>Detalhes</label>
+                <div class="col_full">
+                  <textarea
+                    name="detalhes"
+                    cols="40"
+                    rows="8"
+                    placeholder="Fale sobre o seu resíduo. Diga se é sujo, se contém varrição, se está limpo, prensado, ensacado, misturado com outro material, se passou ou não por processo de descaracterização, etc"
+                    required=""
+                    class="form-control"
+                    id="id_detalhes"
+                    [(ngModel)]="anuncio ? anuncio.detalhes : residuo.detalhes"
+                  ></textarea>
+                </div>
+              </div>
+            </div>
+
+            <div class="col_full nopadding">
+              <div class="row nomargin">
+                <span class="error_message"></span>
+                <input
+                  class="button button-3d button-green nomargin"
+                  type="button"
+                  id=" "
+                  value="Próxima Etapa"
+                  (click)="next2()"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div [hidden]="index != 2" class="nobottommargin clearfix">
+            <!-- basic info -->
+
+            <div class="col_full nomargin nopadding">
+              <div class="col_half nopadding nobottommargin">
+                <div class="col_half nobottommargin">
+                  <label>Unidade</label>
+                  <div class="col_full nobottommargin">
+                    <select
+                      name="tipoUnidade"
+                      class="selectpicker form-control"
+                      id="id_unidade"
+                      [(ngModel)]="
+                        anuncio ? anuncio.tipoUnidade : residuo.tipoUnidade
+                      "
+                    >
+                      <option value="1" selected="">Quilogramas</option>
+
+                      <option value="2">Litros</option>
+
+                      <option value="3">Unidades</option>
+
+                      <option value="4">Peças</option>
+
+                      <option value="5">Metros</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col_half col_last nobottommargin">
+                  <div class="col_full nobottommargin">
+                    <label>Qtd. Resíduo</label>
+                    <div class="col_full nobottommargin nopadding">
+                      <input
+                        type="text"
+                        name="quantidade"
+                        placeholder=""
+                        data-mask="###.###.###"
+                        data-mask-reverse="true"
+                        data-mask-selectonfocus="true"
+                        class="form-control tooltipstered"
+                        required=""
+                        id="id_quantidade"
+                        autocomplete="off"
+                        [(ngModel)]="
+                          anuncio ? anuncio.quantidade : residuo.quantidade
+                        "
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col_full nomargin">
+              <div class="col_half nopadding nobottommargin">
+                <div class="col_half nobottommargin">
+                  <label>Recipiente</label>
+                  <div class="col_full nobottommargin">
+                    <input
+                      type="text"
+                      name="recipiente"
+                      placeholder="Digite qual recipiente armazena o residuo"
+                      data-mask="###.###.###"
+                      data-mask-reverse="true"
+                      data-mask-selectonfocus="true"
+                      class="selectpicker form-control tooltipstered"
+                      id="id_recipiente"
+                      autocomplete="off"
+                      [(ngModel)]="
+                        anuncio ? anuncio.recipiente : residuo.recipiente
+                      "
+                    />
+                  </div>
+                </div>
+
+                <div class="col_half col_last nomargin nopadding">
+                  <div class="col_half col_last nobottommargin">
+                    <label>Frequência</label>
+                    <div class="col_full nobottommargin">
+                      <select
+                        name="frequencia"
+                        class="selectpicker form-control"
+                        id="id_frequencia_retirada"
+                        [(ngModel)]="
+                          anuncio ? anuncio.frequencia : residuo.frequencia
+                        "
+                      >
+                        <option value="Única">Única</option>
+
+                        <option value="Diária">Diária</option>
+
+                        <option value="Semanal">Semanal</option>
+
+                        <option value="Quinzenal">Quinzenal</option>
+
+                        <option value="Mensal">Mensal</option>
+
+                        <option value="Anual">Anual</option>
+
+                        <option value="Combinar" selected="">A combinar</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="col_half col_last nopadding">
+                  <label></label>
+                  <div class="col_full"></div>
+                </div>
+              </div>
+              <div class="col_half col_last nopadding"></div>
+            </div>
+
+            <div class="col_full nopadding">
+              <div class="row nomargin">
+                <span class="error_message"></span>
+                <input
+                  class="button button-3d button-green nomargin"
+                  type="button"
+                  id="submitanuncio"
+                  value="Próxima Etapa"
+                  (click)="next3()"
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- basic info -->
+          <div [hidden]="index != 3" class="nobottommargin clearfix">
+            <div class="col_full">
+              <div class="col_last" id="endereco_residuo" style="">
+                <div class="col_three_fourth col_last">
+                  <div class="col_full nomargin nopadding">
+                    <div class="row">
+                      <div class="col-md-3">
+                        <label>Código Postal</label>
+                        <div class="col_full">
+                          <input
+                            type="text"
+                            name="CEP"
+                            placeholder=""
+                            maxlength="8"
+                            class="form-control tooltipstered"
+                            id="id_zip_alt"
+                            [(ngModel)]="
+                              anuncio ? anuncio.endereco.CEP : residuo.CEP
+                            "
+                          />
+                          <span class="error_message"></span>
+                        </div>
+                      </div>
+
+                      <div class="col-md-5">
+                        <label>R.</label>
+                        <div class="col_full">
+                          <input
+                            type="text"
+                            name="rua"
+                            placeholder=""
+                            class="form-control tooltipstered"
+                            id="id_end_alt"
+                            [(ngModel)]="
+                              anuncio ? anuncio.endereco.rua : residuo.rua
+                            "
+                          />
+                          <span class="error_message"></span>
+                        </div>
+                      </div>
+
+                      <div class="col-md-4">
+                        <label>Compl.</label>
+                        <div class="col_full">
+                          <input
+                            type="text"
+                            name="complemento"
+                            placeholder=""
+                            class="form-control tooltipstered"
+                            id="id_com_alt"
+                            [(ngModel)]="
+                              anuncio
+                                ? anuncio.endereco.complemento
+                                : residuo.complemento
+                            "
+                          />
+                          <span class="error_message"></span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col_full nomargin nopadding">
+                    <div class="row">
+                      <div class="col-md-3">
+                        <label>Br.</label>
+                        <div class="col_full">
+                          <input
+                            type="text"
+                            name="bairro"
+                            placeholder=""
+                            class="form-control tooltipstered"
+                            id="id_bai_alt"
+                            [(ngModel)]="
+                              anuncio ? anuncio.endereco.bairro : residuo.bairro
+                            "
+                          />
+                          <span class="error_message"></span>
+                        </div>
+                      </div>
+
+                      <div class="col-md-2">
+                        <label>N°</label>
+                        <div class="col_full">
+                          <input
+                            type="text"
+                            name="numero"
+                            class="form-control tooltipstered"
+                            id="id_num_alt"
+                            [(ngModel)]="
+                              anuncio ? anuncio.endereco.numero : residuo.numero
+                            "
+                          />
+                          <span class="error_message"></span>
+                        </div>
+                      </div>
+
+                      <div class="col-md-3">
+                        <label>UF</label>
+                        <div class="col_full">
+                          <select
+                            name="estado"
+                            class="form-control"
+                            id="id_uf_alt"
+                            [(ngModel)]="
+                              anuncio ? anuncio.endereco.estado : residuo.estado
+                            "
+                          >
+                            <option value="AC">AC</option>
+
+                            <option value="AL">AL</option>
+
+                            <option value="AP">AP</option>
+
+                            <option value="AM">AM</option>
+
+                            <option value="BA">BA</option>
+
+                            <option value="CE">CE</option>
+
+                            <option value="DF">DF</option>
+
+                            <option value="ES">ES</option>
+
+                            <option value="GO">GO</option>
+
+                            <option value="MA">MA</option>
+
+                            <option value="MT">MT</option>
+
+                            <option value="MS">MS</option>
+
+                            <option value="MG">MG</option>
+
+                            <option value="PA">PA</option>
+
+                            <option value="PB">PB</option>
+
+                            <option value="PR">PR</option>
+
+                            <option value="PE">PE</option>
+
+                            <option value="PI">PI</option>
+
+                            <option value="RJ">RJ</option>
+
+                            <option value="RN">RN</option>
+
+                            <option value="RS">RS</option>
+
+                            <option value="RO">RO</option>
+
+                            <option value="RR">RR</option>
+
+                            <option value="SC">SC</option>
+
+                            <option value="SP">SP</option>
+
+                            <option value="SE">SE</option>
+
+                            <option value="TO">TO</option>
+                          </select>
+                          <span class="error_message"></span>
+                        </div>
+                      </div>
+
+                      <div class="col-md-4 col_last">
+                        <label>Cid.</label>
+                        <div class="col_full">
+                          <input
+                            type="text"
+                            name="cidade"
+                            placeholder=""
+                            class="form-control tooltipstered"
+                            id="id_ci_alt"
+                            [(ngModel)]="
+                              anuncio ? anuncio.endereco.cidade : residuo.cidade
+                            "
+                          />
+                          <span class="error_message"></span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col_full">
+              <div class="col_half nopadding">
+                <div class="col_full nomargin">
+                  <label>Solução Atual</label>
+                  <div class="col_full">
+                    <textarea
+                      name="solucao"
+                      cols="40"
+                      rows="8"
+                      placeholder="Por exemplo: Destino para aterro sanitário, etc..."
+                      class="form-control tooltipstered"
+                      required=""
+                      id="id_solucao_atual"
+                      data-original-title=""
+                      [(ngModel)]="anuncio ? anuncio.solucao : residuo.solucao"
+                    ></textarea>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col_full nopadding">
+              <div class="row nomargin">
+                <span class="error_message"></span>
+                <input
+                  class="button button-3d button-green nomargin"
+                  type="button"
+                  id="submitanuncio"
+                  value="Próxima Etapa"
+                  (click)="next4()"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div [hidden]="index != 4" class="nobottommargin clearfix">
+            <!-- basic info -->
+
+            <div class="col_full">
+              <div class="col_half">
+                <label>Fotos</label>
+                <div class="col_last">
+                  <a
+                    class="pop-me-over"
+                    data-toggle="popover"
+                    data-placement="top"
+                    data-content="Fotos que você considera importante para termos ideia do seu resíduo.
+                    Fotos que mostre o resíduo de perto. Fotos dê dimensão do tamanho do resíduo"
+                    data-title="Fotos"
+                    data-original-title=""
+                    title=""
+                  >
+                  </a>
+                </div>
+                <div class="file-input file-input-new">
+                  <div class="file-preview">
+                    <div class="close fileinput-remove">×</div>
+                    <div class="file-drop-disabled">
+                      <div class="file-preview-thumbnails"></div>
+                      <div class="clearfix"></div>
+                      <div
+                        class="file-preview-status text-center text-success"
+                      ></div>
+                      <div
+                        class="kv-fileinput-error file-error-message"
+                        style="display: none"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="kv-upload-progress hide">
+                    <div class="progress">
+                      <div
+                        class="
+                          progress-bar progress-bar-success progress-bar-striped
+                          active
+                        "
+                        role="progressbar"
+                        aria-valuenow="0"
+                        aria-valuemin="0"
+                        aria-valuemax="100"
+                        style="width: 0%"
+                      >
+                        0%
+                      </div>
+                    </div>
+                  </div>
+                  <div class="input-group input-group-md">
+                    <div
+                      tabindex="500"
+                      class="
+                        form-control
+                        file-caption
+                        form-control
+                        kv-fileinput-caption
+                      "
+                    >
+                      <div class="file-caption-name" title=""></div>
+                    </div>
+
+                    <div class="input-group-btn">
+                      <button
+                        type="button"
+                        tabindex="500"
+                        title="Abort ongoing upload"
+                        class="
+                          btn btn-default
+                          hide
+                          fileinput-cancel fileinput-cancel-button
+                        "
+                      >
+                        <i class="icon-ban-circle"></i>
+                        <span class="hidden-xs">Cancel</span>
+                      </button>
+
+                      <div tabindex="500" class="btn btn-success btn-file">
+                        <i class="icon-picture"></i>
+                        <span class="hidden-xs">Selecione as fotos</span
+                        ><input
+                          type="file"
+                          name="fotos"
+                          id="customFileLabel"
+                          multiple=""
+                          class=""
+                          accept="image/*"
+                          [(ngModel)]="anuncio ? anuncio.fotos : residuo.fotos"
+                          (change) = "onChange($event)"
+                        />
+
+
+
+
+                      </div>
+                      <div class="img-space">
+
+                        <ng-container *ngIf="isImageSaved; else elseTemplate">
+                            <img [src]="cardImageBase64" />
+                        </ng-container>
+                        <ng-template #elseTemplate>
+
+                            <img src="./../../assets/placeholder.png" class="img-responsive">
+                        </ng-template>
+
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- <div class="font-primary">
+            <h4>Documentos <a class="pop-me-over" data-toggle="popover" data-placement="top"
+                data-content="Se você tem algum documento que o comprador irá necessitar, é hora de informá-lo. Utilize os campos ao lado para encontrar o arquivo no seu computador."
+                data-title="Dentro da Lei!" data-original-title="" title="">
+                <i class="i-circled i-light i-small icon-info" title="Dentro da Lei!"></i></a>
+            </h4>
+            <h4><label>Informe as Documentações</label></h4>
+            <p>Informe todas as documentações que você exige da empresa compradora.</p>
+          </div> -->
+
+            <div
+              class="nobottommargin notopmargin clearfix"
+              data-select2-id="4"
+            >
+              <!-- basic info -->
+              <div class="col_full divcenter nobottommargin col_last"></div>
+
+              <!-- <div class="col_full" data-select2-id="3">
+              <div class="col_half">
+                <div class="col_last"><a class="pop-me-over" data-toggle="popover" data-placement="top"
+                    data-content="Escreva o nome dos documentos que sua empresa exige da empresa que negociará"
+                    data-title="Documentos Exigidos" data-original-title="" title=""><i
+                      class="i-circled i-light i-small icon-info"
+                      title="Escreva o nome dos documentos que sua empresa exige da empresa que negociará"></i></a>
+                </div>
+                <label>Documentos Exigidos</label>
+                <select name="documentos_exigidos" data-placeholder="Escreva o nome dos documento e tecle Enter"
+                  data-minimum-input-length="3" id="id_documentos_exigidos" data-autocomplete-light-function="select2"
+                  data-autocomplete-light-language="pt-BR" multiple="" data-select2-id="id_documentos_exigidos"
+                  tabindex="-1" class="select2-hidden-accessible" aria-hidden="true">
+                  <option value="543" data-select2-id="11">Advertências</option>
+
+                  <option value="219" data-select2-id="12">Alvará da Vigilância Sanitária</option>
+
+                  <option value="1" data-select2-id="13">Alvará Municipal de Funcionamento</option>
+
+                  <option value="406" data-select2-id="14">Anotação de Responsabilidade Técnica (ART)</option>
+
+                  <option value="574" data-select2-id="15">Atendimento de Condicionantes</option>
+
+                  <option value="525" data-select2-id="16">Atestado de Saúde Ocupacional (ASO)</option>
+
+                  <option value="545" data-select2-id="17">Atestados/Declarações</option>
+
+                  <option value="2" data-select2-id="18">Auto de Vistoria do Corpo de Bombeiros (AVCB)</option>
+
+                  <option value="7" data-select2-id="19">Autorização de Transporte de Resíduos Classe I (Perigosos)
+                  </option>
+
+                  <option value="573" data-select2-id="20">Autorização para Destinação de Resíduos Perigosos
+                  </option>
+
+                  <option value="554" data-select2-id="21">Carta de Dispensa</option>
+
+                  <option value="549" data-select2-id="22">Carta INSS</option>
+
+                  <option value="4" data-select2-id="23">Cartão CNPJ</option>
+
+                  <option value="563" data-select2-id="24">Carteira de Vacinação</option>
+
+                  <option value="55" data-select2-id="25">Certidão Negativa de Débito (CND) (FGTS - INSS)</option>
+
+                  <option value="523" data-select2-id="26">Certificado ANTT</option>
+
+                  <option value="503" data-select2-id="27">Certificado da Condição de Microempreendedor Individual
+                  </option>
+
+                  <option value="570" data-select2-id="28">Certificado de Descaracterização de Resíduos</option>
+
+                  <option value="30" data-select2-id="29">Certificado de Destinação Final (CDF)</option>
+
+                  <option value="339" data-select2-id="30">Certificado de Licença do Corpo de Bombeiros - CLCB
+                  </option>
+
+                  <option value="558" data-select2-id="31">Certificado de Operador de Empilhadeira</option>
+
+                  <option value="572" data-select2-id="32">Certificado de Operador de Guindaste</option>
+
+                  <option value="532" data-select2-id="33">Certificado de Operador de Prensa</option>
+
+                  <option value="3" data-select2-id="34">Certificado de Regularidade do Cadastro Técnico Federal
+                    (CTF)</option>
+
+                  <option value="446" data-select2-id="35">CNH</option>
+
+                  <option value="548" data-select2-id="36">Comprovante de Pagamento</option>
+
+                  <option value="555" data-select2-id="37">Comprovante de Rescisão</option>
+
+                  <option value="544" data-select2-id="38">Contrato de Prestação de Serviços</option>
+
+                  <option value="35" data-select2-id="39">Contrato Social e Alterações</option>
+
+                  <option value="322" data-select2-id="40">CTPS</option>
+
+                  <option value="551" data-select2-id="41">Declaração de antecedentes criminais</option>
+
+                  <option value="564" data-select2-id="42">Declaração Vale transporte</option>
+
+                  <option value="575" data-select2-id="43">Dispensa de Licença</option>
+
+                  <option value="528" data-select2-id="44">Documentos de Admissão</option>
+
+                  <option value="22" data-select2-id="45">Ficha Cadastral</option>
+
+                  <option value="309" data-select2-id="46">Ficha de EPI</option>
+
+                  <option value="529" data-select2-id="47">Ficha de Integração</option>
+
+                  <option value="524" data-select2-id="48">Ficha de Registro</option>
+
+                  <option value="453" data-select2-id="49">Ficha de Treinamento</option>
+
+                  <option value="533" data-select2-id="50">Folha de Ponto</option>
+
+                  <option value="547" data-select2-id="51">Formulário de investigação acidente de trabalho (CAT)
+                  </option>
+
+                  <option value="530" data-select2-id="52">Holerites Assinados</option>
+
+                  <option value="40" data-select2-id="53">Inscrição Estadual</option>
+
+                  <option value="494" data-select2-id="54">Inscrição Municipal</option>
+
+                  <option value="455" data-select2-id="55">ISO 14001</option>
+
+                  <option value="25" data-select2-id="56">ISO 9001</option>
+
+                  <option value="54" data-select2-id="57">Licença Ambiental de Operação (LO)</option>
+
+                  <option value="6" data-select2-id="58">Licenças Ambientais</option>
+
+                  <option value="266" data-select2-id="59">Licenças Integradas</option>
+
+                  <option value="5" data-select2-id="60">Nota Fiscal</option>
+
+                  <option value="566" data-select2-id="61">Outorga de Uso de Recursos Hídricos</option>
+
+                  <option value="83" data-select2-id="62">Política de Gestão Ambiental</option>
+
+                  <option value="36" data-select2-id="63">Programa de Controle Médico de Saúde Ocupacional (PCMSO)
+                  </option>
+
+                  <option value="37" data-select2-id="64">Programa de Prevenção de Riscos Ambientais (PPRA)</option>
+
+                  <option value="557" data-select2-id="65">Recibo de Benefícios</option>
+
+                  <option value="571" data-select2-id="66">Recibo de Ferias</option>
+
+                  <option value="531" data-select2-id="67">Recibos VR / VT/ Crédito Celular</option>
+
+                  <option value="117" data-select2-id="68">RG/CPF</option>
+
+                  <option value="541" data-select2-id="69">Termo de Recebimento de Celular</option>
+
+                  <option value="546" data-select2-id="70">Termos de Imagem</option>
+
+                  <option value="31" data-select2-id="71">Termos/Contratos de Parceria</option>
+
+                </select><span class="select2 select2-container select2-container--default select2-container--above"
+                  dir="ltr" data-select2-id="1" style="width: 409.883px;"><span class="selection"><span
+                      class="select2-selection select2-selection--multiple" role="combobox" aria-haspopup="true"
+                      aria-expanded="false" tabindex="-1">
+                      <ul class="select2-selection__rendered">
+                        <li class="select2-search select2-search--inline"><input class="select2-search__field"
+                            type="search" tabindex="0" autocomplete="off" autocorrect="off" autocapitalize="none"
+                            spellcheck="false" role="textbox" aria-autocomplete="list"
+                            placeholder="Escreva o nome dos documento e tecle Enter" style="width: 407.383px;"></li>
+                      </ul>
+                    </span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
+              </div>
+            </div> -->
+
+              <!-- <div class="col_full">
+              <div class="col_last"><a class="pop-me-over" data-toggle="popover" data-placement="top" data-content=""
+                  data-title="Nome do Documento" data-original-title="" title=""><i
+                    class="i-circled i-light i-small icon-info" title=""></i></a></div>
+              <span>
+                <p>
+                  <strong><label>Faça upload dos documentos que você possui para vender seu resíduo</label></strong>
+                </p>
+              </span>
+
+
+              <div class="col-md-4 noleftpadding">
+                <label>Nome do Documento #1</label>
+                <input type="text" name="documento_nome1" class="form-control" id="id_documento_nome1">
+              </div>
+              <div class="col-md-5 noleftpadding">
+                <label>Arquivo #1</label>
+                <div class="file-input file-input-new">
+                  <div class="kv-upload-progress hide">
+                    <div class="progress">
+                      <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar"
+                        aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width:0%;">
+                        0%
+                      </div>
+                    </div>
+                  </div>
+                  <div class="input-group input-group-md">
+                    <div tabindex="500" class="form-control file-caption form-control kv-fileinput-caption">
+                      <div class="file-caption-name"></div>
+                    </div>
+
+                    <div class="input-group-btn">
+
+                      <button type="button" tabindex="500" title="Abort ongoing upload"
+                        class="btn btn-default hide fileinput-cancel fileinput-cancel-button"><i
+                          class="icon-ban-circle"></i> <span class="hidden-xs">Cancel</span></button>
+
+                      <div tabindex="500" class="btn btn-success btn-file"><i class="icon-line2-doc"></i> <span
+                          class="hidden-xs">Selecione os documentos</span><input type="file" name="documento1"
+                          id="id_documento1"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3 noleftpadding col_last">
+                <label>Vencimento #1</label>
+                <div class="input-daterange travel-date-group">
+                  <div class="input-daterange">
+                    <input type="text" name="documento_data1" placeholder="DD/MM/AAAA" class="form-control"
+                      id="id_documento_data1">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col_full">
+              <div class="col-md-4 noleftpadding">
+                <label>Nome do Documento #2</label>
+                <input type="text" name="documento_nome2" class="form-control" id="id_documento_nome2">
+              </div>
+              <div class="col-md-5 noleftpadding">
+                <label>Arquivo #2</label>
+                <div class="file-input file-input-new">
+                  <div class="kv-upload-progress hide">
+                    <div class="progress">
+                      <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar"
+                        aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width:0%;">
+                        0%
+                      </div>
+                    </div>
+                  </div>
+                  <div class="input-group input-group-md">
+                    <div tabindex="500" class="form-control file-caption form-control kv-fileinput-caption">
+                      <div class="file-caption-name"></div>
+                    </div>
+
+                    <div class="input-group-btn">
+
+                      <button type="button" tabindex="500" title="Abort ongoing upload"
+                        class="btn btn-default hide fileinput-cancel fileinput-cancel-button"><i
+                          class="icon-ban-circle"></i> <span class="hidden-xs">Cancel</span></button>
+
+                      <div tabindex="500" class="btn btn-success btn-file"><i class="icon-line2-doc"></i> <span
+                          class="hidden-xs">Selecione os documentos</span><input type="file" name="documento2"
+                          id="id_documento2"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3 noleftpadding col_last">
+                <label>Vencimento #2</label>
+                <div class="input-daterange travel-date-group">
+                  <div class="input-daterange">
+                    <input type="text" name="documento_data2" placeholder="DD/MM/AAAA" class="form-control"
+                      id="id_documento_data2">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col_full bottommargin-sm">
+              <div class="col-md-4 noleftpadding">
+                <label>Nome do Documento #3</label>
+                <input type="text" name="documento_nome3" class="form-control" id="id_documento_nome3">
+              </div>
+              <div class="col-md-5 noleftpadding">
+                <label>Arquivo #3</label>
+                <div class="file-input file-input-new">
+                  <div class="kv-upload-progress hide">
+                    <div class="progress">
+                      <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar"
+                        aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width:0%;">
+                        0%
+                      </div>
+                    </div>
+                  </div>
+                  <div class="input-group input-group-md">
+                    <div tabindex="500" class="form-control file-caption form-control kv-fileinput-caption">
+                      <div class="file-caption-name"></div>
+                    </div>
+
+                    <div class="input-group-btn">
+
+                      <button type="button" tabindex="500" title="Abort ongoing upload"
+                        class="btn btn-default hide fileinput-cancel fileinput-cancel-button"><i
+                          class="icon-ban-circle"></i> <span class="hidden-xs">Cancel</span></button>
+
+                      <div tabindex="500" class="btn btn-success btn-file"><i class="icon-line2-doc"></i> <span
+                          class="hidden-xs">Selecione os documentos</span><input type="file" name="documento3"
+                          id="id_documento3"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3 noleftpadding col_last">
+                <label>Vencimento #3</label>
+                <div class="input-daterange travel-date-group">
+                  <div class="input-daterange">
+                    <input type="text" name="documento_data3" placeholder="DD/MM/AAAA" class="form-control"
+                      id="id_documento_data3">
+                  </div>
+                </div>
+              </div>
+            </div> -->
+
+
+              <div class="col_full">
+                <div class="row">
+                  <span class="error_message"></span>
+                  <div class="col-md-3 topmargin-sm">
+                    <input
+                      class="button button-3d button-green nomargin"
+                      type="submit"
+                      id="submitfiles"
+                      value="Finalizar"
+                      (onSubmit)="(new.value)"
+                    />
+                    <!-- {{ formEdit ? "Salvar" : "Anunciar" }} -->
+                  </div>
+                  <div class="col-md-5 topmargin-sm col_last">
+                    <input
+                      class="button button-3d button-green nomargin"
+                      type="submit"
+                      id="jump"
+                      value="Pular etapa e finalizar"
+                      (onSubmit)="(new.value)"
+                    />
+                    <!-- {{ formEdit ? "Salvar" : "Anunciar" }}> -->
+                  </div>
+                </div>
+              </div>
+              <div class="row nomargin">
+                <span class="note"
+                  ><strong>Você poderá fazer isso depois.</strong></span
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- <div class="col_full nopadding">
             <div class="row nomargin">
               <span class="error_message"></span>
               <button
@@ -244,23 +1271,13 @@
                 value="Anúnciar"
                 (onSubmit) = "new.value"
                 [disabled]="!new.valid"
-                               
+
               >{{formEdit ? 'Salvar': 'Anunciar'}}
               </button>
             </div>
-          </div>
+          </div> -->
         </div>
       </form>
     </div>
   </div>
-
-
-
-
-
-
-
-
-
-  
 </div>

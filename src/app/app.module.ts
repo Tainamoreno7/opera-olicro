@@ -35,7 +35,6 @@ import { ReactiveFormsModule} from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { LoginModule } from './view/login/login.module';
 import { PlataformaComponent } from './view/plataforma/plataforma.component';
-
 import { AlertComponent } from './components/alert/alert.component';
 import { JwtInterceptor } from './account/_helpers/jwt.interceptor';
 import { ErrorInterceptor } from './account/_helpers/error.interceptor';
@@ -63,11 +62,11 @@ import { fakeBackendProvider } from './account/_helpers/fake-backend';
     PlataformaComponent,
     AlertComponent,
 
-        
 
-    
-    
-    
+
+
+
+
   ],
   imports: [
     BrowserModule,
@@ -93,9 +92,10 @@ import { fakeBackendProvider } from './account/_helpers/fake-backend';
     FlexLayoutModule,
     LoginModule,
     RouterModule,
-    CommonModule
+    CommonModule,
 
-  
+
+
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
@@ -106,7 +106,7 @@ import { fakeBackendProvider } from './account/_helpers/fake-backend';
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { 
-  
+export class AppModule {
+
 
 }

@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { AnunciosService } from './../../../view/anuncio/anuncios.service';
+import { Anuncio } from './../../../view/anuncio/anuncio';
+import { Component, Input, OnInit } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import { FormBuilder } from '@angular/forms';
 import {AccountService} from 'src/app/account/shared/account.service'
@@ -12,25 +14,33 @@ import { Router } from '@angular/router';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
-   
+
   value = 'Clear me';
   isLogging: boolean = false;
 
-
+  @Input() anuncios?: Anuncio[];
+  public index: number = 0;
 
   isExpanded:boolean = false;
   isMobile: boolean = false;
   user: String = 'Tainá Moreno';
 
-  
+
+
+
+
   constructor(
     private accountService: AccountService,
+    private serviceAnuncio: AnunciosService,
     private router: Router
-   ) { 
-    
+   ) {
+
   }
-  
-  
+  public get indexValue(){
+    return this.index;
+  }
+
+
   ngOnInit(): void {
 
     this.accountService.isLogging$.subscribe(
@@ -39,12 +49,27 @@ export class HeaderComponent {
 
     this.setMobile();
    }
+
+   filter(number:any){
+    debugger
+        console.log(number)
+        this.serviceAnuncio.getByTipo(number).subscribe(dados => {
+          this.anuncios = dados;
+          console.log(dados);
+        });
+        debugger
+        this.router.navigate(['plataforma']);
+        this.index = 1;
+
+
+      }
+
   logout(){
     this.accountService.logout();
     this.router.navigate(['/']);
 
    }
-  
+
   collapse() {
     this.isExpanded = false;
   }
@@ -61,24 +86,24 @@ export class HeaderComponent {
     }
     return false;
   }
-  
+
   customOptions: OwlOptions = {
     loop: true,
     mouseDrag: true,
     touchDrag: true,
     pullDrag: true,
     dots: true,
-    navSpeed: 700, 
-    stagePadding: 0,   
+    navSpeed: 700,
+    stagePadding: 0,
     navText: ['', ''],
     responsive: {
       0: {
         items: 1
-               
+
       },
       25: {
         items: 2
-        
+
       },
       20: {
         items: 3
@@ -113,7 +138,7 @@ export class HeaderComponent {
     },
     nav: true
   }
-  
-  	
+
+
 
 }
